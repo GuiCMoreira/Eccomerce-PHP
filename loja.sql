@@ -21,6 +21,10 @@ SET time_zone = "+00:00";
 -- Banco de dados: `loja`
 --
 
+DROP DATABASE IF EXISTS `loja`;
+CREATE DATABASE IF NOT EXISTS `loja` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `loja`;
+
 -- --------------------------------------------------------
 
 --
