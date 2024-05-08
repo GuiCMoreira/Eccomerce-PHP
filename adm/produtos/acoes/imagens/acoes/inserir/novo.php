@@ -22,7 +22,7 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
   echo "<p>$erro</p>";
   ?>
 
-  <a href="../../produto.php"><button class="btn_voltar">Voltar</button></a>
+  <a href="../../../../produto.php"><button class="btn_voltar">Voltar</button></a>
 
   <form action="inserir.php" method="post">
 

@@ -35,16 +35,15 @@ $response = $bd->query($select);
                 echo "</td>";
                 echo "<td>";
 
-                echo " <a href='acoes/editar/editar.php?codigo_prod=" . $produtos['codigo_prod']. "'><button>Editar</button></a>";
+                echo " <a href='acoes/editar/editar.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Editar</button></a>";
 
-                echo " <a href='acoes/consultar/consultar.php?codigo_prod=" . $produtos['codigo_prod']. "'><button>Consultar</button></a>";
+                echo " <a href='acoes/consultar/consultar.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Consultar</button></a>";
 
-                echo " <a href='acoes/excluir/excluir.php?codigo_prod=" . $produtos['codigo_prod']. "'><button>Excluir</button></a>";
-                
-            
-                echo " <a href='acoes/imagens/novo.php?codigo_prod=" . $produtos['codigo_prod']. "'><button>Inserir Imagem</button></a>";
-               
-                
+                echo " <a href='acoes/excluir/excluir.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Excluir</button></a>";
+
+                echo " <a href='acoes/imagens/imagens.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Imagens</button></a>";
+
+
                 echo "</td>";
                 echo "</tr>";
             }

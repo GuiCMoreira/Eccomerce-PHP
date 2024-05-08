@@ -3,8 +3,8 @@ $codigo_img = filter_input(INPUT_POST, 'codigo_img', FILTER_SANITIZE_SPECIAL_CHA
 $codigo_prod = filter_input(INPUT_POST, 'codigo_prod', FILTER_SANITIZE_SPECIAL_CHARS);
 $nome_arquivo = filter_input(INPUT_POST, 'nome_arquivo', FILTER_SANITIZE_SPECIAL_CHARS);
 
-include_once "../../../../script/banco.php";
-include_once "../../../../script/erros.php";
+include_once "../../../../../../script/banco.php";
+include_once "../../../../../../script/erros.php";
 $bd = conectar();
 
 $sql = " INSERT INTO imagem (codigo_img, codigo_prod, nome_arquivo) VALUES ('$codigo_img', '$codigo_prod', '$nome_arquivo')";
@@ -29,5 +29,5 @@ try {
 
 $bd = null;
 
-header("location:../../produto.php");
+header("location:../../../../produto.php");
 ?>
