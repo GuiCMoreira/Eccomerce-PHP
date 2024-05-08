@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 08/05/2024 às 19:05
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Tempo de geração: 08/05/2024 às 20:54
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,8 +41,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id`, `nome`) VALUES
-(3, 'Vestuário'),
-(6, 'Utensilio de cozinha');
+(1, 'Saladas'),
+(2, 'Legumes'),
+(3, 'Frutas');
 
 -- --------------------------------------------------------
 
@@ -95,9 +96,13 @@ CREATE TABLE `imagem` (
 
 INSERT INTO `imagem` (`codigo_img`, `codigo_prod`, `nome_arquivo`) VALUES
 (1, '1', 'https://i.imgur.com/H5MqEfu.png'),
-(4, '12', 'https://i.imgur.com/jNWIpNB.png'),
-(123, '121', 'a'),
-(1234, '121', 'as');
+(2, '2', 'https://i.imgur.com/jNWIpNB.png'),
+(3, '3', 'https://i.imgur.com/ypNcNFV.png'),
+(4, '4', 'https://i.imgur.com/p1bUtga.png'),
+(5, '5', 'https://i.imgur.com/Z2fR3TW.png'),
+(6, '6', 'https://i.imgur.com/NuevSLk.png'),
+(7, '7', 'https://i.imgur.com/72686pQ.png'),
+(8, '8', 'https://i.imgur.com/jQaRExE.png');
 
 -- --------------------------------------------------------
 
@@ -135,10 +140,14 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`codigo_prod`, `nome_pro`, `descricao`, `valor_unitario`, `quantidade`, `peso`, `dimensoes`, `unidade_venda`, `id_categoria`) VALUES
-('1', 'Camiseta', 'Camiseta', 20.00, 20.00, '20', '20', '20', 3),
-('12', 'Manga', 'Manga', 90.00, 90.00, '90', '90', '90', 3),
-('121', 'Atum', '1', 1.00, 1.00, '1', '1', '1', 3),
-('43', 'Atum', '1', 1.00, 1.00, '1', '1', '1', 3);
+('1', 'Maçã', 'Verdinha', 90.00, 90.00, '90', '90', '90', 3),
+('2', 'Manga', 'Laranjinha', 90.00, 90.00, '90', '90', '90', 3),
+('3', 'Tomate', 'Vermelhinho', 90.00, 90.00, '90', '90', '90', 3),
+('4', 'Couve-Flor', 'Florescente', 90.00, 90.00, '90', '90', '90', 1),
+('5', 'Alface', 'Verdinho', 90.00, 90.00, '90', '90', '90', 1),
+('6', 'Pimentão', 'Ardidinho', 90.00, 90.00, '90', '90', '90', 2),
+('7', 'Pimenta', 'Ardidássa', 90.00, 90.00, '90', '90', '90', 2),
+('8', 'Beringela', 'Gigante', 90.00, 90.00, '90', '90', '90', 2);
 
 -- --------------------------------------------------------
 
@@ -162,7 +171,8 @@ CREATE TABLE `transportadora` (
 --
 
 INSERT INTO `transportadora` (`cpf_cnpj_trans`, `nome_trans`, `endereco_trans`, `numero_trans`, `bairro_trans`, `cidade_trans`, `estado_trans`, `cep_trans`) VALUES
-('121212', 'RM Transportes Express', 'aba', 'aba', 'aba', 'aba', 'ab', 'aba');
+('1', 'Mafe Express', '90', '90', '90', '90', '90', '90'),
+('2', 'Gui Fast', '90', '90', '90', '90', '90', '90');
 
 -- --------------------------------------------------------
 
@@ -180,7 +190,8 @@ CREATE TABLE `vendedor` (
 --
 
 INSERT INTO `vendedor` (`cpf_cnpj_vend`, `nome_vend`) VALUES
-('45069533800', 'Maria Fernanda');
+('45069533800', 'Maria Fernanda'),
+('47708562880', 'Guilherme Moreira');
 
 --
 -- Índices para tabelas despejadas
