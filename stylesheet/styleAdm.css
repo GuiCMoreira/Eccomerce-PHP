@@ -83,8 +83,3 @@ input[type='submit'] {
   width: 250px; /* Adicionado para definir a largura do botão */
   height: 50px; /* Adicionado para definir a altura do botão */
 }
-
-/* Estilo para o botão de envio ao passar o mouse */
-input[type='submit']:hover {
-  background-color: #45a049;
-}
