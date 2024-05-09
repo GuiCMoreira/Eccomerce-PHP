@@ -12,6 +12,8 @@ $response = $bd->query($select);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheet/styleAdm.css">
+
     <title>Transportadoras</title>
 </head>
 
@@ -35,11 +37,11 @@ $response = $bd->query($select);
                 echo "</td>";
                 echo "<td>";
 
-                echo " <a href='acoes/editar/editar.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans']. "'><button>Editar</button></a>";
+                echo " <a href='acoes/editar/editar.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans'] . "'><button>Editar</button></a>";
 
-                echo " <a href='acoes/consultar/consultar.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans']. "'><button>Consultar</button></a>";
+                echo " <a href='acoes/consultar/consultar.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans'] . "'><button>Consultar</button></a>";
 
-                echo " <a href='acoes/excluir/excluir.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans']. "'><button>Excluir</button></a>";
+                echo " <a href='acoes/excluir/excluir.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans'] . "'><button>Excluir</button></a>";
 
                 echo "</td>";
                 echo "</tr>";

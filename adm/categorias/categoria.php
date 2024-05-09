@@ -12,6 +12,8 @@ $response = $bd->query($select);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheet/styleAdm.css">
+
     <title>Categorias</title>
 </head>
 
@@ -35,11 +37,11 @@ $response = $bd->query($select);
                 echo "</td>";
                 echo "<td>";
 
-                echo " <a href='acoes/editar/editar.php?id=" . $categoria['id']. "'><button>Editar</button></a>";
+                echo " <a href='acoes/editar/editar.php?id=" . $categoria['id'] . "'><button>Editar</button></a>";
 
-                echo " <a href='acoes/consultar/consultar.php?id=" . $categoria['id']. "'><button>Consultar</button></a>";
+                echo " <a href='acoes/consultar/consultar.php?id=" . $categoria['id'] . "'><button>Consultar</button></a>";
 
-                echo " <a href='acoes/excluir/excluir.php?id=" . $categoria['id']. "'><button>Excluir</button></a>";
+                echo " <a href='acoes/excluir/excluir.php?id=" . $categoria['id'] . "'><button>Excluir</button></a>";
 
                 echo "</td>";
                 echo "</tr>";
