@@ -31,10 +31,6 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
       <input type="text" name="codigo_prod" value="<?= $codigo_prod ?>">
     </div>
     <div>
-      <label>ID Imagem: </label>
-      <input type="text" name="codigo_img" value="<?= $codigo_img ?>">
-    </div>
-    <div>
       <label>Link da Imagem: </label>
       <input type="text" name="nome_arquivo" value="<?= $nome_arquivo ?>">
     </div>

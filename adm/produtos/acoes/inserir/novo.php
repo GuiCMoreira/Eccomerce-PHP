@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 
 <?php
+include_once '../../../../script/banco.php';
+include_once '../../../../script/geral.php';
+$bd = conectar();
+$select = "SELECT * FROM categoria";
+$response = $bd->query($select);
+
+$categoria = $response->fetchAll();
+
 $codigo_prod = filter_input(INPUT_GET, 'codigo_prod', FILTER_SANITIZE_SPECIAL_CHARS);
 $nome_pro = filter_input(INPUT_GET, 'nome_pro', FILTER_SANITIZE_SPECIAL_CHARS);
 $descricao = filter_input(INPUT_GET, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -66,7 +74,11 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
     </div>
     <div>
       <label>Categoria: </label>
-      <input type="number" name="id_categoria" value="<?= $id_categoria ?>">
+      <select name="id_categoria">
+        <?php
+        ListaSelecao($categoria, ["id", "nome"]);
+        ?>
+      </select>
     </div>
     <input type="submit" value="Salvar">
 

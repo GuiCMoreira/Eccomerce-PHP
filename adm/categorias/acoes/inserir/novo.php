@@ -26,10 +26,6 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
   <form action="inserir.php" method="post">
 
     <div>
-      <label>ID: </label>
-      <input type="text" name="id" value="<?= $id ?>">
-    </div>
-    <div>
       <label>Categoria: </label>
       <input type="text" name="nome" value="<?= $nome ?>">
     </div>

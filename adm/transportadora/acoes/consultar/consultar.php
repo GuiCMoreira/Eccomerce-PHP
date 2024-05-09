@@ -27,7 +27,7 @@ $transportadora = $response->fetch();
   <a href="../../transportadora.php"><button class="btn_voltar">Voltar</button></a>
   <form action="">
     <div>
-      <h3>ID: </h3>
+      <h3>CPF/CNPJ: </h3>
       <p><?= $transportadora['cpf_cnpj_trans']; ?></p>
     </div>
     <div>

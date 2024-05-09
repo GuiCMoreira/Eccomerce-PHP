@@ -1,13 +1,12 @@
 <?php
-$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 
 include_once "../../../../script/banco.php";
 $bd = conectar();
 
 $sql = " INSERT INTO categoria"
-  . " (id, nome)"
-  . " VALUES ('$id', '$nome')";
+  . " (nome)"
+  . " VALUES ('$nome')";
 
 $bd->beginTransaction();
 
@@ -23,8 +22,7 @@ try {
   $bd->rollBack();
   $bd = null;
   $erro = erros($e->getMessage());
-  header("location:novo.php?id=$id& "
-    . " nome=$nome&erro=$erro");
+  header("location:novo.php?nome=$nome&erro=$erro");
   die();
 }
 

@@ -1,9 +1,14 @@
 <?php
 include_once '../../../../script/banco.php';
+include_once '../../../../script/geral.php';
 $bd = conectar();
 $id = filter_input(INPUT_GET, 'codigo_prod', FILTER_SANITIZE_STRING);
+
 $select = "SELECT * FROM produto where codigo_prod = '$id'";
+$selectCategoria = "SELECT * FROM categoria";
+
 $response = $bd->query($select);
+$responseCategoria = $bd->query($selectCategoria);
 
 if ($response->rowCount() == 0) {
     $bd = null;
@@ -11,6 +16,7 @@ if ($response->rowCount() == 0) {
     die();
 }
 $produtos = $response->fetch();
+$categoria = $responseCategoria->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +56,12 @@ $produtos = $response->fetch();
             <label>Unidade de Venda</label>
             <input type="text" name="unidade_venda" value="<?= $produtos['unidade_venda'] ?>">
             <br>
-            <label>Categoria</label>
-            <input type="number" name="id_categoria" value="<?= $produtos['id_categoria'] ?>">
+            <label>Categoria: </label>
+            <select name="id_categoria">
+                <?php
+                ListaSelecao($categoria, ["id", "nome"], $produtos['id_categoria']);
+                ?>
+            </select>
         </div>
         <input type="submit" value="Salvar">
     </form>

@@ -32,7 +32,7 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
   <form action="inserir.php" method="post">
 
     <div>
-      <label>ID: </label>
+      <label>CPF/CNPJ: </label>
       <input type="text" name="cpf_cnpj_trans" value="<?= $cpf_cnpj_trans ?>">
     </div>
     <div>
