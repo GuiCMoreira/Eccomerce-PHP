@@ -28,6 +28,7 @@ $categoria = $responseCategoria->fetchAll();
     <link rel="stylesheet" href="../../../../stylesheet/adm.css">
 
     <title>Editar Produtos</title>
+<link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>

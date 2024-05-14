@@ -22,6 +22,7 @@ $transportadora = $response->fetch();
     <link rel="stylesheet" href="../../../../stylesheet/adm.css">
 
     <title>Editar Transportadoras</title>
+<link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>

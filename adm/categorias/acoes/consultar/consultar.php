@@ -23,6 +23,7 @@ $categoria = $response->fetch();
 
 
   <title>Consultar</title>
+<link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>

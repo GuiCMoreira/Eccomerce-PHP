@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheet/adm.css">
     <title>ADM</title>
+<link rel="shortcut icon" href="../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>

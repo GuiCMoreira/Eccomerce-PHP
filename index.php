@@ -12,7 +12,9 @@ $response = $bd->query($select);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecobazar</title>
+<link rel="shortcut icon" href="stylesheet/assets/logo_planta.svg" type="image/x-icon">
   <link rel="stylesheet" href="stylesheet/style.css">
+  <link rel="shortcut icon" href="../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>
