@@ -85,7 +85,7 @@ $categoria = $stmtCategoria->fetch();
           <div class="div-3">
             <div class="vendedor">Vendedor: </div>
             <div class="grupo">
-              <div class="nome_vendedor"><?= $produto['descricao'] ?></div>
+              <div class="nome_vendedor">CONFIGURAR</div>
               <br>
             </div>
           </div>
