@@ -41,6 +41,7 @@ footer {
   list-style: none;
   margin: 0;
   padding: 0;
+  
 }
 
 .Menu li {
@@ -65,6 +66,7 @@ footer {
 
 .Products {
   padding: 40px;
+
 }
 
 .Products h2 {
@@ -76,13 +78,13 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, min(300px));
   grid-auto-rows: minmax(200px, auto);
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+  gap: 20px ;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .Product {
-  border: 1px solid #ccc;
+  border: 0.5px solid #ccc;
   padding: 20px;
   text-align: center;
 }
@@ -90,4 +92,37 @@ footer {
 .Product img {
   width: 100%;
   height: 200px;
+}
+
+p{
+color: #1A1A1A;
+flex: none;
+order: 0;
+flex-grow: 0;
+line-height: 150%;
+width: 51px;
+height: 24px;
+}
+
+#nome_pro{
+font-weight: 400;
+font-size: 18px;
+color: #4D4D4D;
+}
+
+#valor {
+font-weight: 600;
+font-size: 20px;
+color: #1A1A1A;
+
+
+}
+
+a{
+  text-decoration: none;
+}
+
+#botao_sacola{
+width: 51px;
+height: 50px ;
 }
