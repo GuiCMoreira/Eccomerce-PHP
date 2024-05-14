@@ -11,7 +11,6 @@
       <div class="div">
         <img class="product-image" src="img/product-image-3.png" />
       </div>
-
    
       <a href="../index.php"><img src="../stylesheet/assets/voltar.svg" alt=""></a>
       
