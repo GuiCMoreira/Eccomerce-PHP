@@ -25,10 +25,10 @@ $response = $bd->query($select);
       </div>
       <nav class="Menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Produtos</a></li>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="">Home</a></li>
+          <li><a href="">Produtos</a></li>
+          <li><a href="">Sobre nós</a></li>
+          <li><a href="">Contato</a></li>
         </ul>
       </nav>
     </div>
@@ -47,9 +47,8 @@ $response = $bd->query($select);
           echo "<img src='" . $produtos["nome_arquivo"] . "' alt=''>";
           echo $produtos["nome_pro"];
           echo "<br>";
-          echo " <a href='usuario/comprar.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Comprar Agora</button></a>";
           echo "<br>";
-          echo " <a href='usuario/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Adicionar ao Carrinho</button></a>";
+          echo " <a href='pages/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Adicionar ao Carrinho</button></a>";
           echo "</a>";
           echo "</div>";
         }
