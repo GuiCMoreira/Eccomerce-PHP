@@ -35,6 +35,10 @@ $response = $bd->query($select);
 
   <main>
 
+    <div class="Banner">
+      <img src="stylesheet/assets/banner2.svg" alt="Ecobazar Banner">
+    </div>
+
   <section class="Products">
       <h2>Nossos Produtos</h2>
       <div class="Product-grid">
@@ -48,10 +52,10 @@ $response = $bd->query($select);
           echo $produtos["nome_pro"];
           echo "</p>";  
           echo "<p id='valor'>";
-          echo $produtos["valor_unitario"];
+          echo "R$" . $produtos["valor_unitario"];
           echo "</p>";
           echo "<br>";
-          echo " <a href='usuario/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'
+          echo " <a href='pages/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'
           ><img src='stylesheet/assets/botao_sacola.svg' id='botao_sacola'></a>";
           echo "</a>";
           echo "</div>";
@@ -64,7 +68,7 @@ $response = $bd->query($select);
 
 
     <div class="Banner">
-      <img src="stylesheet/assets/banner.svg" alt="Ecobazar Banner">
+      <img src="stylesheet/assets/banner3.svg" alt="Ecobazar Banner">
     </div>
   </main>
 
@@ -73,12 +77,15 @@ $response = $bd->query($select);
     </div>
     <div class="Footer">
       <div class="Logo">
-        <a href="adm/index.php">
-          <img src="stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        <a href="index.php">
+          <img src="stylesheet/assets/logo2.svg" alt="Ecobazar Logo">
         </a>
       </div>
+    </div>
+    <div><br></div>
+    <div class="Footer">
       <nav class="Menu">
-      <p>&copy; 2024 Ecobazar</p>
+      <spam>&copy; 2024 Ecobazar</spam>
       </nav>
     </div>
   </footer>

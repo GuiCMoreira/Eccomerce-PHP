@@ -31,7 +31,7 @@ $categoria = $stmtCategoria->fetch();
   <header>
     <div class="Header">
       <div class="Logo">
-        <a href="adm/index.php">
+        <a href="../index.php">
           <img src="../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
         </a>
       </div>
@@ -53,7 +53,6 @@ $categoria = $stmtCategoria->fetch();
       <img class="imagem_produto" src="<?= $imagem['nome_arquivo'] ?>" alt="">
       </div>
    
-      <a href="../index.php"><img src="../stylesheet/assets/voltar.svg" alt=""></a>
       
       <div class="frame">
         <div class="frame-2">
