@@ -42,16 +42,16 @@ $response = $bd->query($select);
         <?php
         while ($produtos = $response->fetch()) {
 
-          echo "<a href='pages/produtos.php?codigo_prod=" . $produtos['codigo_prod'] . "'>";
           echo "<div class='Product'>";
+          echo "<a href='pages/produtos.php?codigo_prod=" . $produtos['codigo_prod'] . "'>";
           echo "<img src='" . $produtos["nome_arquivo"] . "' alt=''>";
           echo $produtos["nome_pro"];
           echo "<br>";
           echo " <a href='usuario/comprar.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Comprar Agora</button></a>";
           echo "<br>";
           echo " <a href='usuario/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Adicionar ao Carrinho</button></a>";
-          echo "</div>";
           echo "</a>";
+          echo "</div>";
         }
         $response = null;
         $bd = null;

@@ -13,7 +13,7 @@
       </div>
 
    
-      <a href="index.php"><img src="stylesheet/assets/voltar.svg" alt=""></a>
+      <a href="../index.php"><img src="../stylesheet/assets/voltar.svg" alt=""></a>
       
       <div class="frame">
         <div class="frame-2">
@@ -29,7 +29,7 @@
               <div class="preco_produto">$48.00</div>
             </div>
           </div>
-          <img class="divisor" src="stylesheet/assets/linha.svg" />
+          <img class="divisor" src="../stylesheet/assets/linha.svg" />
         </div>
 
         <!-- VENDEDOR  -->
@@ -49,14 +49,14 @@
         </div>
         <div class="adicionar_carrinho">
           <div class="quantidade">
-            <div class="adicionar_produto"><img class="selecionar" src="stylesheet/assets/diminuir.svg" /></div>
+            <div class="adicionar_produto"><img class="selecionar" src="../stylesheet/assets/diminuir.svg" /></div>
             <div class="quantidade_selecionada">5</div>
-            <div class="adicionar_produto"><img class="selecionar" src="stylesheet/assets/aumentar.svg" /></div>
+            <div class="adicionar_produto"><img class="selecionar" src="../stylesheet/assets/aumentar.svg" /></div>
           </div>
           
           <button class="button">
             <div class="texto_carrinho">Adicionar ao Carrinho</div>
-            <img class="rectangle" src="stylesheet/assets/sacola.svg" />
+            <img class="rectangle" src="../stylesheet/assets/sacola.svg" />
           </button>
       
         </div>
