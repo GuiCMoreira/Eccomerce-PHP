@@ -1,5 +1,6 @@
 /* General styles */
 body {
+ 
   font-family: sans-serif;
   margin: 0;
   padding: 0;
@@ -48,8 +49,8 @@ header {
   width: 100%;
 }
 
-/* Products section styles */
 .Products {
+
   padding: 40px;
 }
 
@@ -60,9 +61,14 @@ header {
 
 .Product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, min(300px));
+  grid-auto-rows: minmax(200px, auto);
+  gap: 20px ;
+  justify-content: center; 
+  align-items: center; 
 }
+
+
 
 .Product {
   border: 1px solid #ccc;
