@@ -42,6 +42,7 @@ $response = $bd->query($select);
         <?php
         while ($produtos = $response->fetch()) {
 
+          echo "<a href='pages/produtos.php?codigo_prod=" . $produtos['codigo_prod'] . "'>";
           echo "<div class='Product'>";
           echo "<img src='" . $produtos["nome_arquivo"] . "' alt=''>";
           echo $produtos["nome_pro"];
@@ -50,6 +51,7 @@ $response = $bd->query($select);
           echo "<br>";
           echo " <a href='usuario/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Adicionar ao Carrinho</button></a>";
           echo "</div>";
+          echo "</a>";
         }
         $response = null;
         $bd = null;
