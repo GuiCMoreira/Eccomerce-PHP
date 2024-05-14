@@ -35,7 +35,7 @@ $response = $bd->query($select);
 
   <main>
 
-    <section class="Products">
+  <section class="Products">
       <h2>Nossos Produtos</h2>
       <div class="Product-grid">
         <?php
@@ -44,10 +44,15 @@ $response = $bd->query($select);
           echo "<div class='Product'>";
           echo "<a href='pages/produtos.php?codigo_prod=" . $produtos['codigo_prod'] . "'>";
           echo "<img src='" . $produtos["nome_arquivo"] . "' alt=''>";
+          echo "<p id='nome_pro'>";
           echo $produtos["nome_pro"];
+          echo "</p>";  
+          echo "<p id='valor'>";
+          echo $produtos["valor_unitario"];
+          echo "</p>";
           echo "<br>";
-          echo "<br>";
-          echo " <a href='pages/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Adicionar ao Carrinho</button></a>";
+          echo " <a href='usuario/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'
+          ><img src='stylesheet/assets/botao_sacola.svg' id='botao_sacola'></a>";
           echo "</a>";
           echo "</div>";
         }
@@ -56,6 +61,7 @@ $response = $bd->query($select);
         ?>
       </div>
     </section>
+
 
     <div class="Banner">
       <img src="stylesheet/assets/banner.svg" alt="Ecobazar Banner">
