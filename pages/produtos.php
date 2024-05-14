@@ -37,15 +37,16 @@ $categoria = $stmtCategoria->fetch();
       </div>
       <nav class="Menu">
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Produtos</a></li>
+          <li><a href="../index.php">Home</a></li>
           <li><a href="">Sobre nós</a></li>
           <li><a href="">Contato</a></li>
+          <li><a href="carrinho.php">Carrinho</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+    <main>
     <div class="produtos_detalhes">
 
       <div class="div">
@@ -110,5 +111,7 @@ $categoria = $stmtCategoria->fetch();
         </div>
       </div>
     </div>
+    </main>
+
   </body>
 </html>

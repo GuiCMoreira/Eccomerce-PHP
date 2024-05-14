@@ -25,10 +25,9 @@ $response = $bd->query($select);
       </div>
       <nav class="Menu">
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Produtos</a></li>
           <li><a href="">Sobre nós</a></li>
           <li><a href="">Contato</a></li>
+          <li><a href="pages/carrinho.php">Carrinho</a></li>
         </ul>
       </nav>
     </div>
@@ -65,12 +64,16 @@ $response = $bd->query($select);
 
   <footer>
     <div class="Footer">
+    </div>
+    <div class="Footer">
+      <div class="Logo">
+        <a href="adm/index.php">
+          <img src="stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+      <nav class="Menu">
       <p>&copy; 2024 Ecobazar</p>
-      <ul class="Social-media">
-        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      </ul>
+      </nav>
     </div>
   </footer>
 </body>

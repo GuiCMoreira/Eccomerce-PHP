@@ -6,7 +6,6 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>arquivo de função de adicionar ao carrinho</h1>
-  <a href="carrinho.php"><h1>carrinho</h1></a>
+  <h1>carrinho</h1>
 </body>
 </html>
