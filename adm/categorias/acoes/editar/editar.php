@@ -26,7 +26,20 @@ $categoria = $response->fetch();
 </head>
 
 <body>
+<header>
+<br>
+    <div class="Header">
+      <div class="Logo">
+        <a href="../../../../index.php">
+            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+    </div>
+    <br>
+  </header>
+
     <a href="../../categoria.php"><button>Voltar</button></a>
+    <br>
     <form action="salvar.php" method="POST">
         <div>
             <label>ID: </label>
@@ -36,6 +49,7 @@ $categoria = $response->fetch();
             <input type="text" name="nome" value="<?= $categoria['nome'] ?>">
             <br>
         </div>
+        <br>
         <input type="submit" value="Salvar">
     </form>
 </body>

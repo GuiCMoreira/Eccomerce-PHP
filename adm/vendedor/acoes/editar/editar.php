@@ -26,7 +26,19 @@ $vendedores = $response->fetch();
 </head>
 
 <body>
+<header>
+<br>
+    <div class="Header">
+      <div class="Logo">
+        <a href="../../../../index.php">
+            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+    </div>
+    <br>
+  </header>
     <a href="../../vendedor.php"><button>Voltar</button></a>
+    <br>
     <form action="salvar.php" method="POST">
         <div>
             <label>CPF / CNPJ Vendedor</label>
@@ -36,6 +48,7 @@ $vendedores = $response->fetch();
             <input type="text" name="nome_vend" value="<?= $vendedores['nome_vend'] ?>">
 
         </div>
+        <br>
         <input type="submit" value="Salvar">
     </form>
 </body>

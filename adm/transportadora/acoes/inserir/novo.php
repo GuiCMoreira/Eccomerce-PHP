@@ -23,12 +23,24 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
 </head>
 
 <body>
+<header>
+<br>
+    <div class="Header">
+      <div class="Logo">
+        <a href="../../../../index.php">
+            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+    </div>
+    <br>
+  </header>
 
   <?php
   echo "<p>$erro</p>";
   ?>
 
   <a href="../../transportadora.php"><button class="btn_voltar">Voltar</button></a>
+  <br>
 
   <form action="inserir.php" method="post">
 
@@ -64,6 +76,7 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
       <label>CEP: </label>
       <input type="text" name="cep_trans" value="<?= $cep_trans ?>">
     </div>
+    <br>
     <input type="submit" value="Salvar">
 
   </form>

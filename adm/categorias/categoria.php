@@ -19,6 +19,18 @@ $response = $bd->query($select);
 </head>
 
 <body>
+<header>
+<br>
+    <div class="Header">
+      <div class="Logo">
+        <a href="../../index.php">
+            <img src="../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+    </div>
+    <br>
+  </header>
+
     <a href="../index.php"><button class="btn_voltar">Voltar</button></a>
     <br>
     <table>

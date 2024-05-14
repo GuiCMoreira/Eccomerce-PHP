@@ -26,7 +26,19 @@ $transportadora = $response->fetch();
 </head>
 
 <body>
+<header>
+<br>
+    <div class="Header">
+      <div class="Logo">
+        <a href="../../../../index.php">
+            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+    </div>
+    <br>
+  </header>
     <a href="../../transportadora.php"><button>Voltar</button></a>
+    <br>
     <form action="salvar.php" method="POST">
         <div>
             <label>ID: </label>
@@ -53,6 +65,7 @@ $transportadora = $response->fetch();
             <label>CEP: </label>
             <input type="text" name="cep_trans" value="<?= $transportadora['cep_trans'] ?>">
         </div>
+        <br>
         <input type="submit" value="Salvar">
     </form>
 </body>

@@ -17,9 +17,20 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
 </head>
 
 <body>
-
+<header>
+<br>
+    <div class="Header">
+      <div class="Logo">
+        <a href="../../../../index.php">
+            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+    </div>
+    <br>
+  </header>
 
   <a href="../../categoria.php"><button class="btn_voltar">Voltar</button></a>
+  <br>
 
   <form action="inserir.php" method="post">
 
@@ -27,7 +38,7 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
       <label>Categoria: </label>
       <input type="text" name="nome" value="<?= $nome ?>">
     </div>
-
+    <br>
     <input type="submit" value="Salvar">
 
   </form>

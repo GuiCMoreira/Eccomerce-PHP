@@ -32,7 +32,19 @@ $categoria = $responseCategoria->fetchAll();
 </head>
 
 <body>
+<header>
+<br>
+    <div class="Header">
+      <div class="Logo">
+        <a href="../../../../index.php">
+            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+    </div>
+    <br>
+  </header>
     <a href="../../produto.php"><button>Voltar</button></a>
+    <br>
     <form action="salvar.php" method="POST">
         <div>
             <label>Código Produto</label>
@@ -66,6 +78,7 @@ $categoria = $responseCategoria->fetchAll();
                 ?>
             </select>
         </div>
+        <br>
         <input type="submit" value="Salvar">
     </form>
 </body>

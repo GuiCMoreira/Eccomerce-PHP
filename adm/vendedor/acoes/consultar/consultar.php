@@ -25,7 +25,19 @@ $vendedores = $response->fetch();
 </head>
 
 <body>
+<header>
+<br>
+    <div class="Header">
+      <div class="Logo">
+        <a href="../../../../index.php">
+            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+        </a>
+      </div>
+    </div>
+    <br>
+  </header>
   <a href="../../vendedor.php"><button class="btn_voltar">Voltar</button></a>
+  <br>
   <form action="">
     <div>
       <h3>CPF/CNPJ Vendedor: </h3>
