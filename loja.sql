@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/05/2024 às 20:54
+-- Tempo de geração: 14/05/2024 às 20:11
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -128,7 +128,7 @@ CREATE TABLE `produto` (
   `nome_pro` varchar(50) DEFAULT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `valor_unitario` decimal(10,2) DEFAULT NULL,
-  `quantidade` decimal(5,2) DEFAULT NULL,
+  `quantidade` decimal(5,0) DEFAULT NULL,
   `peso` varchar(10) DEFAULT NULL,
   `dimensoes` varchar(15) DEFAULT NULL,
   `unidade_venda` varchar(3) DEFAULT NULL,
@@ -140,14 +140,14 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`codigo_prod`, `nome_pro`, `descricao`, `valor_unitario`, `quantidade`, `peso`, `dimensoes`, `unidade_venda`, `id_categoria`) VALUES
-('1', 'Maçã', 'Verdinha', 90.00, 90.00, '90', '90', '90', 3),
-('2', 'Manga', 'Laranjinha', 90.00, 90.00, '90', '90', '90', 3),
-('3', 'Tomate', 'Vermelhinho', 90.00, 90.00, '90', '90', '90', 3),
-('4', 'Couve-Flor', 'Florescente', 90.00, 90.00, '90', '90', '90', 1),
-('5', 'Alface', 'Verdinho', 90.00, 90.00, '90', '90', '90', 1),
-('6', 'Pimentão', 'Ardidinho', 90.00, 90.00, '90', '90', '90', 2),
-('7', 'Pimenta', 'Ardidássa', 90.00, 90.00, '90', '90', '90', 2),
-('8', 'Beringela', 'Gigante', 90.00, 90.00, '90', '90', '90', 2);
+('1', 'Maçã', 'Verdinha', 90.00, 90, '90', '90', '90', 3),
+('2', 'Manga', 'Laranjinha', 90.00, 90, '90', '90', '90', 3),
+('3', 'Tomate', 'Vermelhinho', 90.00, 90, '90', '90', '90', 3),
+('4', 'Couve-Flor', 'Florescente', 90.00, 90, '90', '90', '90', 1),
+('5', 'Alface', 'Verdinho', 90.00, 90, '90', '90', '90', 1),
+('6', 'Pimentão', 'Ardidinho', 90.00, 90, '90', '90', '90', 2),
+('7', 'Pimenta', 'Ardidássa', 90.00, 90, '90', '90', '90', 2),
+('8', 'Beringela', 'Gigante', 90.00, 90, '90', '90', '90', 2);
 
 -- --------------------------------------------------------
 
