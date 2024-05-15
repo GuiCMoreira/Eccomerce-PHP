@@ -169,7 +169,7 @@ $categoria = $stmtCategoria->fetch();
     </div>
     <div class="Footer">
       <div class="Logo">
-        <a href="index.php">
+        <a href="../index.php">
           <img src="../stylesheet/assets/logo2.svg" alt="Ecobazar Logo">
         </a>
       </div>
