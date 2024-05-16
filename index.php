@@ -3,6 +3,9 @@ include_once 'script/banco.php';
 $bd = conectar();
 $select = "SELECT p.*, i.nome_arquivo FROM produto p LEFT JOIN imagem i on p.codigo_prod = i.codigo_prod GROUP BY p.codigo_prod ORDER BY nome_pro";
 $response = $bd->query($select);
+
+$selectCategoria = "SELECT * FROM categoria";
+$responseCategoria = $bd->query($selectCategoria);
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +76,23 @@ $response = $bd->query($select);
     <div class="Banner">
       <img src="stylesheet/assets/banner3.svg" alt="Ecobazar Banner">
     </div>
+
+    <section class="Products">
+      <h2>Categorias</h2>
+      <div class="Product-grid">
+        <?php
+        while ($selectCategoria = $responseCategoria->fetch()) {
+          echo "<a href='pages/porCategoria.php?id_categoria=" . $selectCategoria['id'] . "'>";
+          echo "<div class='Product'>";
+          echo $selectCategoria["nome"];
+          echo "</div>";
+          echo "</a>";
+        }
+        $response = null;
+        $bd = null;
+        ?>
+      </div>
+    </section>
   </main>
 
   <footer>
