@@ -91,16 +91,18 @@ $categoria = $stmtCategoria->fetch();
           </div>
         </div>
 
-          <form action="adicionarCarrinho.php" method="GET">
+        <form action="adicionarCarrinho.php" method="GET">
 
         <div class="adicionar_carrinho">
           <div class="quantidade">
             <div class="adicionar_produto">
-            <button id="diminuirBtn">-</button>
+            <img src="../stylesheet/assets/diminuir.svg" alt="" id="diminuirBtn">
+            
             </div>
-            <input type="number" readonly name="quantidadeSelecionada" id="quantidadeSelecionada" value="1">
+            <input type="number" readonly name="quantidadeSelecionada" id="quantidadeSelecionada" value="1" class=quantidade_selecionada>
             <div class="adicionar_produto">
-            <button id="aumentarBtn">+</button>
+            <img src="../stylesheet/assets/aumentar.svg" alt="" id="aumentarBtn">
+            
             </div>
           </div>
 
@@ -110,25 +112,25 @@ $categoria = $stmtCategoria->fetch();
             const quantidadeSelecionada = document.getElementById('quantidadeSelecionada');
 
             diminuirBtn.addEventListener('click', function() {
-                let quantidadeAtual = parseInt(quantidadeSelecionada.textContent);
+                let quantidadeAtual = parseInt(quantidadeSelecionada.value);
                 if (quantidadeAtual > 1) {
                     quantidadeAtual--;
-                    quantidadeSelecionada.textContent = quantidadeAtual;
+                    quantidadeSelecionada.value = quantidadeAtual;
                 }
+
             });
 
             aumentarBtn.addEventListener('click', function() {
-                let quantidadeAtual = parseInt(quantidadeSelecionada.textContent);
+                let quantidadeAtual = parseInt(quantidadeSelecionada.value);
                 if (quantidadeAtual < <?= $produto['quantidade'] ?>) {
                   quantidadeAtual++;
-                  quantidadeSelecionada.textContent = quantidadeAtual;
+                  quantidadeSelecionada.value = quantidadeAtual;
                 }
             });
 
           </script>
           <input type="hidden" name="codigo_prod" value="<?=$id?>">
-
-          <input type="submit" value="Adicionar ao Carrinho">
+          <input type="submit" value="Adicionar ao Carrinho" class="carrinho-add">
           </form>
 
         </div>
