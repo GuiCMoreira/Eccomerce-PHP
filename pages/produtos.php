@@ -32,6 +32,7 @@ $categoria = $stmtCategoria->fetch();
   <link rel="shortcut icon" href="../stylesheet/assets/logo_planta.svg" type="image/x-icon">
   <link rel="stylesheet" href="../stylesheet/produtos.css" />
   <link rel="stylesheet" href="../stylesheet/style.css">
+
 </head>
 <body>
   <header>
@@ -80,17 +81,6 @@ $categoria = $stmtCategoria->fetch();
             <img class="divisor" src="../stylesheet/assets/linha.svg" />
         </div>
 
-        <!-- VENDEDOR  -->
-        <div class="frame-4">
-          <div class="div-3">
-            <div class="vendedor">Vendedor: </div>
-            <div class="grupo">
-              <div class="nome_vendedor">CONFIGURAR</div>
-              <br>
-            </div>
-          </div>
-        </div>
-
         <div class="frame-4">
           <div class="div-3">
             <div class="vendedor">Descrição: </div>
@@ -101,24 +91,46 @@ $categoria = $stmtCategoria->fetch();
           </div>
         </div>
 
+          <form action="adicionarCarrinho.php" method="GET">
 
         <div class="adicionar_carrinho">
           <div class="quantidade">
             <div class="adicionar_produto">
-              <img class="selecionar" src="../stylesheet/assets/diminuir.svg" />
+            <button id="diminuirBtn">-</button>
             </div>
-            <div class="quantidade_selecionada">5</div>
+            <input type="number" readonly name="quantidadeSelecionada" id="quantidadeSelecionada" value="1">
             <div class="adicionar_produto">
-              <img class="selecionar" src="../stylesheet/assets/aumentar.svg" />
+            <button id="aumentarBtn">+</button>
             </div>
           </div>
 
-          <a href="adicionarCarrinho.php">
-            <button class="button">
-              <div class="texto_carrinho">Adicionar ao Carrinho</div>
-              <img class="rectangle" src="../stylesheet/assets/sacola.svg" />
-            </button>
-          </a>
+          <script>
+            const diminuirBtn = document.getElementById('diminuirBtn');
+            const aumentarBtn = document.getElementById('aumentarBtn');
+            const quantidadeSelecionada = document.getElementById('quantidadeSelecionada');
+
+            diminuirBtn.addEventListener('click', function() {
+                let quantidadeAtual = parseInt(quantidadeSelecionada.textContent);
+                if (quantidadeAtual > 1) {
+                    quantidadeAtual--;
+                    quantidadeSelecionada.textContent = quantidadeAtual;
+                }
+            });
+
+            aumentarBtn.addEventListener('click', function() {
+                let quantidadeAtual = parseInt(quantidadeSelecionada.textContent);
+                if (quantidadeAtual < <?= $produto['quantidade'] ?>) {
+                  quantidadeAtual++;
+                  quantidadeSelecionada.textContent = quantidadeAtual;
+                }
+            });
+
+          </script>
+          <input type="hidden" name="codigo_prod" value="<?=$id?>">
+
+          <input type="submit" value="Adicionar ao Carrinho">
+          </form>
+
         </div>
 
         <div class="frame-4">
