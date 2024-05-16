@@ -22,6 +22,10 @@ footer {
   color: #ffffff;
 }
 
+#nomeCategoria {
+  color: #1a1a1a;
+}
+
 .Header {
   display: flex;
   justify-content: space-between;

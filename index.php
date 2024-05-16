@@ -84,7 +84,9 @@ $responseCategoria = $bd->query($selectCategoria);
         while ($selectCategoria = $responseCategoria->fetch()) {
           echo "<a href='pages/porCategoria.php?id_categoria=" . $selectCategoria['id'] . "'>";
           echo "<div class='Product'>";
+          echo "<span id='nomeCategoria'>";
           echo $selectCategoria["nome"];
+          echo "</span>";
           echo "</div>";
           echo "</a>";
         }
