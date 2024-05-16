@@ -179,7 +179,8 @@
   flex-grow: 0;
 }
 
-#diminuirBtn, #aumentarBtn{
+#diminuirBtn,
+#aumentarBtn {
   cursor: pointer;
 }
 
@@ -219,7 +220,6 @@
   background-color: var(--gray-scalegray-50);
   border-radius: 170px;
 }
-
 
 .produtos_detalhes .quantidade_selecionada {
   position: relative;
@@ -313,4 +313,14 @@ input {
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+#quantidadeSelecionada {
+  width: 30px; /* largura desejada */
+  padding: 0px 0px 0px 10px; /* sem padding */
+  border: 0px; /* sem borda */
+  border-radius: 5px; /* borda arredondada */
+  font-size: 16px; /* tamanho da fonte */
+  text-align: center; /* alinhamento do texto */
+  color: #1a1a1a; /* cor do texto */
 }

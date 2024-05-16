@@ -99,7 +99,7 @@ $categoria = $stmtCategoria->fetch();
             <img src="../stylesheet/assets/diminuir.svg" alt="" id="diminuirBtn">
             
             </div>
-            <input type="number" readonly name="quantidadeSelecionada" id="quantidadeSelecionada" value="1" class=quantidade_selecionada>
+            <input type="number" readonly name="quantidadeSelecionada" value="1" id="quantidadeSelecionada" class="quantidadeSelecionada">
             <div class="adicionar_produto">
             <img src="../stylesheet/assets/aumentar.svg" alt="" id="aumentarBtn">
             
@@ -164,8 +164,6 @@ $categoria = $stmtCategoria->fetch();
           echo "R$" . $produtos["valor_unitario"];
           echo "</p>";
           echo "<br>";
-          echo " <a href='adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'
-          ><img src='../stylesheet/assets/botao_sacola.svg' id='botao_sacola'></a>";
           echo "</a>";
           echo "</div>";
           $contador++;

@@ -104,15 +104,6 @@ footer {
   transition: background 0.3s ease;
 }
 
-.quantidade button:hover {
-  background: #e6e6e6;
-}
-
-#quantidadeSelecionada {
-  color: #1a1a1a;
-  margin: 0px 10px 0px 10px;
-}
-
 p {
   color: #1a1a1a;
   flex: none;
