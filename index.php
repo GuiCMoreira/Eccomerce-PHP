@@ -46,7 +46,7 @@ $response = $bd->query($select);
       <div class="Product-grid">
         <?php
         while ($produtos = $response->fetch()) {
-
+          if ($produtos['quantidade'] != 0) {
           echo "<div class='Product'>";
           echo "<a href='pages/produtos.php?codigo_prod=" . $produtos['codigo_prod'] . "'>";
           echo "<img src='" . $produtos["nome_arquivo"] . "' alt=''>";
@@ -57,10 +57,9 @@ $response = $bd->query($select);
           echo "R$" . $produtos["valor_unitario"];
           echo "</p>";
           echo "<br>";
-          echo " <a href='pages/adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'
-          ><img src='stylesheet/assets/botao_sacola.svg' id='botao_sacola'></a>";
           echo "</a>";
           echo "</div>";
+          }
         }
         $response = null;
         $bd = null;

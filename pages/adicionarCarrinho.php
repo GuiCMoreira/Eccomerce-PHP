@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="shortcut icon" href="../stylesheet/assets/logo_planta.svg" type="image/x-icon">
-</head>
-<body>
-  <h1>arquivo de função de adicionar ao carrinho</h1>
-  <a href="carrinho.php"><h1>carrinho</h1></a>
-</body>
-</html>
+<?php
+$id = filter_input(INPUT_GET, 'codigo_prod', FILTER_SANITIZE_SPECIAL_CHARS);
+$quantidadeSelecionada = filter_input(INPUT_GET, 'quantidadeSelecionada', FILTER_SANITIZE_SPECIAL_CHARS);
+
+include_once "../script/banco.php";
+$bd = conectar();
+
+$sql = "INSERT INTO itemcompra (codigo_prod, quantidade) VALUES ('$id', '$quantidadeSelecionada')";
+
+$bd->beginTransaction();
+$i = $bd->exec($sql);
+if ($i == 1) {
+  $bd->commit();
+} else {
+  $bd->rollBack();
+}
+
+$bd = null;
+
+header("location:produtos.php?codigo_prod=$id");
+?>
