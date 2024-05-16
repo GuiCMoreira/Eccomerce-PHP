@@ -164,6 +164,8 @@ $categoria = $stmtCategoria->fetch();
           echo "R$" . $produtos["valor_unitario"];
           echo "</p>";
           echo "<br>";
+          echo " <a href='adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'
+          ><img src='../stylesheet/assets/botao_sacola.svg' id='botao_sacola'></a>";
           echo "</a>";
           echo "</div>";
           $contador++;
