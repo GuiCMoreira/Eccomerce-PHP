@@ -1,16 +1,6 @@
 <?php
-
 session_start();
-
-if (isset($_SESSION['carrinho_serializado'])) {
-      $carrinho = unserialize($_SESSION['carrinho_serializado']);
-  foreach ($carrinho as $item) {
-      echo $item[0] . ' ' . $item[1] . ' ' . $item[2] . ' ' . $item[3] . '<br>';
-  }
-}
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,21 +44,29 @@ if (isset($_SESSION['carrinho_serializado'])) {
           
         </div>
         <div class="carrinho-items">
-          <div class="carrinho-item">
-            <div class="item-image">
-               <img src="https://via.placeholder.com/100x100" alt="Product Image">
-            </div>
-            <div class="item-details">
-              <div class="item-nome">Green Capsicum</div>
-              <div class="item-preco">$14.00</div>
-              <div class="item-subtotal">$70.00</div>
-              <div class="item-quantidade">
-                <button>-</button>
-                <span>5</span>
-                <button>+</button>
-              </div>
-            </div>
-          </div>
+<?php
+if (isset($_SESSION['carrinho_serializado'])) {
+      $carrinho = unserialize($_SESSION['carrinho_serializado']);
+  foreach ($carrinho as $item) {
+
+          echo "<div class='carrinho-item'>";
+            echo "<div class='item-image'>";
+               echo "<img src='$item[3]' alt='Product Image'>";
+            echo "</div>";
+            echo "<div class='item-details'>";
+              echo "<div class='item-nome'>$item[2]</div>";
+              echo "<div class='item-preco'>$item[1]</div>";
+              echo "<div class='item-subtotal'>$70.00</div>";
+              echo "<div class='item-quantidade'>";
+                echo "<button>-</button>";
+                echo "<span>$item[0]</span>";
+                echo "<button>+</button>";
+              echo "</div>";
+            echo "</div>";
+          echo "</div>";
+  }
+}
+?>
         </div>
         <div class="carrinho-acoes">
           <button class="return-to-shop">Voltar a Comprar</button>
