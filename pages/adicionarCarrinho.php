@@ -15,7 +15,16 @@ if (isset($_SESSION['carrinho_serializado'])) {
     $carrinho = array();
 }
 
-$item = array($quantidadeSelecionada, $nome_pro, $valor_unitario, $nome_arquivo);
+for ($i = 0; $i < count($carrinho); $i++) {
+    if ($carrinho[$i][4] == $id) {
+        $carrinho[$i][0] = $carrinho[$i][0] + $quantidadeSelecionada;
+        $_SESSION['carrinho_serializado'] = serialize($carrinho);
+        header("location:produtos.php?codigo_prod=$id");
+        exit();
+    }
+}
+
+$item = array($quantidadeSelecionada, $nome_pro, $valor_unitario, $nome_arquivo, $id);
 array_push($carrinho, $item);
 
 $_SESSION['carrinho_serializado'] = serialize($carrinho);

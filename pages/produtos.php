@@ -168,7 +168,7 @@ $categoria = $stmtCategoria->fetch();
           echo "R$" . $produtos["valor_unitario"];
           echo "</p>";
           echo "<br>";
-          echo " <a href='adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "'
+          echo " <a href='adicionarCarrinho.php?codigo_prod=" . $produtos['codigo_prod'] . "&valor_unitario=" . $produtos['valor_unitario'] . "&nome_arquivo=" . $produtos['nome_arquivo'] . "&nome_pro=" . $produtos['nome_pro'] . "&quantidadeSelecionada=1'
           ><img src='../stylesheet/assets/botao_sacola.svg' id='botao_sacola'></a>";
           echo "</a>";
           echo "</div>";

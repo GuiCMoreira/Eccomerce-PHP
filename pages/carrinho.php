@@ -54,12 +54,13 @@ if (isset($_SESSION['carrinho_serializado'])) {
                echo "<img src='$item[3]' alt='Product Image'>";
             echo "</div>";
             echo "<div class='item-details'>";
-              echo "<div class='item-nome'>$item[2]</div>";
-              echo "<div class='item-preco'>$item[1]</div>";
-              echo "<div class='item-subtotal'>$70.00</div>";
+              echo "<div class='item-nome'>$item[1]</div>";
+              echo "<div class='item-preco'>R$$item[2]</div>";
+              $resultado = $item[0] * $item[2];
+              echo "<div class='item-subtotal'>R$$resultado</div>";
               echo "<div class='item-quantidade'>";
                 echo "<button>-</button>";
-                echo "<span>$item[0]</span>";
+                echo "<span id='$item[4]'>$item[0]</span>";
                 echo "<button>+</button>";
               echo "</div>";
             echo "</div>";
@@ -69,7 +70,9 @@ if (isset($_SESSION['carrinho_serializado'])) {
 ?>
         </div>
         <div class="carrinho-acoes">
+        <a href="../index.php">
           <button class="return-to-shop">Voltar a Comprar</button>
+        </a>
         </div>
       </div>
     </section>
