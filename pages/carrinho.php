@@ -47,24 +47,25 @@ session_start();
 <?php
 if (isset($_SESSION['carrinho_serializado'])) {
       $carrinho = unserialize($_SESSION['carrinho_serializado']);
+      $total = 0;
   foreach ($carrinho as $item) {
-
-          echo "<div class='carrinho-item'>";
+            echo "<div class='carrinho-item'>";
             echo "<div class='item-image'>";
-               echo "<img src='$item[3]' alt='Product Image'>";
+            echo "<img src='$item[3]' alt='Product Image'>";
             echo "</div>";
             echo "<div class='item-details'>";
-              echo "<div class='item-nome'>$item[1]</div>";
-              echo "<div class='item-preco'>R$$item[2]</div>";
-              $resultado = $item[0] * $item[2];
-              echo "<div class='item-subtotal'>R$$resultado</div>";
-              echo "<div class='item-quantidade'>";
-                echo "<button>-</button>";
-                echo "<span id='$item[4]'>$item[0]</span>";
-                echo "<button>+</button>";
-              echo "</div>";
+            echo "<div class='item-nome'>$item[1]</div>";
+            echo "<div class='item-preco'>R$$item[2]</div>";
+            $resultado = $item[0] * $item[2];
+            echo "<div class='item-subtotal'>R$$resultado</div>";
+            echo "<div class='item-quantidade'>";
+            echo "<button>-</button>";
+            echo "<span id='$item[4]'>$item[0]</span>";
+            echo "<button>+</button>";
             echo "</div>";
-          echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            $total = $total + $resultado;
   }
 }
 ?>
@@ -75,26 +76,26 @@ if (isset($_SESSION['carrinho_serializado'])) {
         </a>
         </div>
       </div>
+      <form action="">
     </section>
 
     <section class="total">
       <div class="carrinho-container-2">
-        <div class="carrinho-titulo">Cart Total</div>
+        <div class="carrinho-titulo">Carrinho Total</div>
         <div class="carrinho-summary">
           <div class="carrinho-subtotal">
             <div class="subtotal-label">Subtotal:</div>
-            <div class="subtotal-amount">$84.00</div>
+            <div class="subtotal-amount"></div>
           </div>
           <div class="carrinho-total">
             <div class="total-label">Total:</div>
-            <div class="total-amount">$84.00</div>
+            <div class="total-amount">R$<?=$total?></div>
           </div>
         </div>
-        <div class="checkout-button">
-          <button>Proceed to Checkout</button>
-        </div>
+        <input name="finalizarCompra" type="submit" value="Finalizar Compra" class="finalizarCompra">
       </div>
     </section>
+      </form>
     </main>
 
     <br>

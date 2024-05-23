@@ -2,7 +2,28 @@ main {
   width: 100%;
   display: flex;
   flex-direction: row;
+}
 
+.finalizarCompra {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 40px;
+  gap: 16px;
+  width: 368px;
+  height: 51px;
+  background: #00b307;
+  border-radius: 43px;
+  border: none;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  cursor: pointer;
 }
 
 .carrinho-container {
@@ -29,7 +50,6 @@ main {
 .carrinho-header {
   display: flex;
   justify-content: space-between;
- 
 }
 
 .carrinho-items {
@@ -110,7 +130,6 @@ main {
 .carrinho-actions button:hover {
   background: #e6e6e6;
 }
-
 
 .carrinho-titulo {
   color: #1a1a1a;
