@@ -1,9 +1,24 @@
 <?php
+
 session_start();
+
 $id = filter_input(INPUT_GET, 'codigo_prod', FILTER_SANITIZE_SPECIAL_CHARS);
+
+$valor_unitario = filter_input(INPUT_GET, 'valor_unitario', FILTER_SANITIZE_SPECIAL_CHARS);
+$nome_arquivo = filter_input(INPUT_GET, 'nome_arquivo', FILTER_SANITIZE_SPECIAL_CHARS);
+$nome_pro = filter_input(INPUT_GET, 'nome_pro', FILTER_SANITIZE_SPECIAL_CHARS);
 $quantidadeSelecionada = filter_input(INPUT_GET, 'quantidadeSelecionada', FILTER_SANITIZE_SPECIAL_CHARS);
 
-$_SESSION['carrinho'][$id] = $quantidadeSelecionada;
+if (isset($_SESSION['carrinho_serializado'])) {
+    $carrinho = unserialize($_SESSION['carrinho_serializado']);
+} else {
+    $carrinho = array();
+}
+
+$item = array($quantidadeSelecionada, $nome_pro, $valor_unitario, $nome_arquivo);
+array_push($carrinho, $item);
+
+$_SESSION['carrinho_serializado'] = serialize($carrinho);
 
 header("location:produtos.php?codigo_prod=$id");
 ?>

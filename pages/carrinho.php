@@ -1,4 +1,15 @@
+<?php
 
+session_start();
+
+if (isset($_SESSION['carrinho_serializado'])) {
+      $carrinho = unserialize($_SESSION['carrinho_serializado']);
+  foreach ($carrinho as $item) {
+      echo $item[0] . ' ' . $item[1] . ' ' . $item[2] . ' ' . $item[3] . '<br>';
+  }
+}
+
+?>
 
 
 <!DOCTYPE html>

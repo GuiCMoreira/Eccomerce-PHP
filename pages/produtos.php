@@ -129,9 +129,12 @@ $categoria = $stmtCategoria->fetch();
             });
 
           </script>
-          
-          <input type="hidden" name="codigo_prod" value="<?=$id?>">
-          <input type="submit" value="Adicionar ao Carrinho" class="carrinho-add">
+
+          <input type="hidden" name="codigo_prod" value="<?= $id ?>">
+          <input type="hidden" name="nome_arquivo" value="<?= $imagem['nome_arquivo'] ?>">
+          <input type="hidden" name="nome_pro" value="<?= $produto['nome_pro'] ?>">
+          <input type="hidden" name="valor_unitario" value="<?= $produto['valor_unitario'] ?>">
+          <input name="adicionarCarrinho" type="submit" value="Adicionar ao Carrinho" class="carrinho-add">
   </form>
 
         </div>
