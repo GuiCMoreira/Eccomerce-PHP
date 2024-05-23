@@ -91,7 +91,7 @@ $categoria = $stmtCategoria->fetch();
           </div>
         </div>
 
-        <form action="adicionarCarrinho.php" method="GET">
+  <form action="adicionarCarrinho.php" method="GET">
 
         <div class="adicionar_carrinho">
           <div class="quantidade">
@@ -129,9 +129,10 @@ $categoria = $stmtCategoria->fetch();
             });
 
           </script>
+          
           <input type="hidden" name="codigo_prod" value="<?=$id?>">
           <input type="submit" value="Adicionar ao Carrinho" class="carrinho-add">
-          </form>
+  </form>
 
         </div>
 

@@ -320,7 +320,7 @@ input {
   padding: 0px 0px 0px 10px; /* sem padding */
   border: 0px; /* sem borda */
   border-radius: 5px; /* borda arredondada */
-  font-size: 16px; /* tamanho da fonte */
+  font-size: 14px; /* tamanho da fonte */
   text-align: center; /* alinhamento do texto */
   color: #1a1a1a; /* cor do texto */
 }
@@ -335,6 +335,6 @@ input {
   height: auto; /* Mantém a proporção da imagem */
 }
 
-a{
+a {
   text-decoration: none;
 }
