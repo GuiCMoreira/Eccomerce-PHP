@@ -31,31 +31,30 @@ $sql = "INSERT INTO cliente (cpf_cnpj_cli, nome_cli, numero_cli, bairro_cli, cid
 
 $sql2 = "INSERT INTO compra (data_compra, valor_comissao, valor_transporte, cpf_cnpj_vend, cpf_cnpj_trans, cpf_cnpj_cli) VALUES ('$data_compra', '$valor_comissao', '$valor_transporte', '$cpf_cnpj_vend', '$cpf_cnpj_trans', '$cpf_cnpj_cli')";
 
-$sql3 = "INSERT INTO itemcompra (codigo_prod, valor, quantidade) VALUES ('$item[4]', '$item[2]', '$item[0]')";
+foreach ($carrinho as $item) {
+    $sql3 = "INSERT INTO itemcompra (codigo_prod, valor, quantidade) VALUES ('$item[4]', '$item[2]', '$item[0]')";
 
-echo $sql;
-echo $sql2;
-echo $sql3;
-die();
+    $k= $bd->exec($sql3);
+}
 
 try {
     $bd->beginTransaction();
     $i = $bd->exec($sql);
     $j = $bd->exec($sql2);
 
-    if ($i != 1 || $j != 1) {
+    if ($i != 1 || $j != 1 || $k != 1) {
         $bd->rollBack();
         echo "Erro ao inserir dados.";
     } else {
         $bd->commit();
-        header("Location: i.php?cpf_cnpj_cli=$cpf_cnpj_cli&cpf_cnpj_trans=$cpf_cnpj_trans&cpf_cnpj_vend=$cpf_cnpj_vend");
+        header("Location: ../pages/finalizarCompra.php?cpf_cnpj_cli=$cpf_cnpj_cli&cpf_cnpj_trans=$cpf_cnpj_trans&cpf_cnpj_vend=$cpf_cnpj_vend");
         exit;
     }
 } catch (PDOException $e) {
     $bd->rollBack();
     echo "Erro: " . $e->getMessage();
     $bd = null;
-    header("Location: i.php?cpf_cnpj_cli=$cpf_cnpj_cli&nome_cli=$nome_cli&numero_cli=$numero_cli&bairro_cli=$bairro_cli&cidade_cli=$cidade_cli&cep_cli=$cep_cli&estado_cli=$estado_cli&endereco_cli=$endereco_cli&cpf_cnpj_trans=$cpf_cnpj_trans&cpf_cnpj_vend=$cpf_cnpj_vend&erro=1");
+    header("Location: ../pages/finalizarCompra.php?cpf_cnpj_cli=$cpf_cnpj_cli&nome_cli=$nome_cli&numero_cli=$numero_cli&bairro_cli=$bairro_cli&cidade_cli=$cidade_cli&cep_cli=$cep_cli&estado_cli=$estado_cli&endereco_cli=$endereco_cli&cpf_cnpj_trans=$cpf_cnpj_trans&cpf_cnpj_vend=$cpf_cnpj_vend&erro=1");
     exit;
 }
 

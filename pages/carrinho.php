@@ -76,7 +76,7 @@ if (isset($_SESSION['carrinho_serializado'])) {
         </a>
         </div>
       </div>
-      <form action="">
+      <form action="finalizarCompra.php">
     </section>
 
     <section class="total">

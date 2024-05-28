@@ -33,35 +33,41 @@
 
         <div class="container">
             <h2>Informações</h2>
-            <form action="#" method="POST">
+            <form action="../script/finalizarCompra.php" method="POST">
                     
-                    <label for="firstName">CPF:</label>
-                    <input type="text" id="firstName" name="firstName" class="input-field">
+                    <label for="cpf_cnpj_cli">CPF:</label>
+                    <input type="text" id="cpf_cnpj_cli" name="cpf_cnpj_cli" class="input-field">
                     
-                    <label for="lastName">Nome:</label>
-                    <input type="text" id="lastName" name="lastName" class="input-field">
-                    
-                    
-                    <label for="email">Número:</label>
-                    <input type="email" id="email" name="email" class="input-field">
+                    <label for="nome_cli">Nome:</label>
+                    <input type="text" id="nome_cli" name="nome_cli" class="input-field">
                     
                     
-                    <label for="password">Bairro:</label>
-                    <input type="password" id="password" name="password" class="input-field">
+                    <label for="numero">Número:</label>
+                    <input type="numero" id="numero" name="numero_cli" class="input-field">
                     
-                    <label for="password">Cidade:</label>
-                    <input type="password" id="password" name="password" class="input-field">
                     
-                    <label for="password">CEP:</label>
-                    <input type="password" id="password" name="password" class="input-field">
+                    <label for="bairro_cli">Bairro:</label>
+                    <input type="bairro_cli" id="bairro_cli" name="bairro_cli" class="input-field">
                     
-                    <label for="password">Estado:</label>
-                    <input type="password" id="password" name="password" class="input-field">
+                    <label for="cidade_cli">Cidade:</label>
+                    <input type="cidade_cli" id="cidade_cli" name="cidade_cli" class="input-field">
                     
-                    <label for="password">Endereço:</label>
-                    <input type="password" id="password" name="password" class="input-field">
-            </section>
-        </div>
+                    <label for="cep_cli">CEP:</label>
+                    <input type="cep_cli" id="cep_cli" name="cep_cli" class="input-field">
+                    
+                    <label for="estado_cli">Estado:</label>
+                    <input type="estado_cli" id="estado_cli" name="estado_cli" class="input-field">
+                    
+                    <label for="endereco_cli">Endereço:</label>
+                    <input type="endereco_cli" id="endereco_cli" name="endereco_cli" class="input-field">
+
+                    <label for="cpf_cnpj_trans">cpf_cnpj_trans</label>
+                  <input type="text" name="cpf_cnpj_trans" id="cpf_cnpj_trans">
+
+                  <label for="cpf_cnpj_vend">cpf_cnpj_vend</label>
+                  <input type="text" name="cpf_cnpj_vend" id="cpf_cnpj_vend">
+                          </section>
+                      </div>
         
         
         <section class="resumo-pedido">
@@ -80,6 +86,7 @@
                       <select name="" id=""></select>
                     </div>
                 </div>
+
                 <div class="Button">
                     <button type="submit" class="submit-button">Finalizar Compra</button>
                 </div>
