@@ -22,7 +22,8 @@ $transportadora = $response->fetchAll();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Billing Information</title>
+  <title>Finalizar Compra</title>
+  <link rel="shortcut icon" href="../stylesheet/assets/logo_planta.svg" type="image/x-icon">
   <link rel="stylesheet" href="../stylesheet/finalizar.css">
   <link rel="stylesheet" href="../stylesheet/style.css">
 </head>
