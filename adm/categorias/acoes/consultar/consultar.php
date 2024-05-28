@@ -23,16 +23,16 @@ $categoria = $response->fetch();
 
 
   <title>Consultar</title>
-<link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>
-<header>
-<br>
+  <header>
+    <br>
     <div class="Header">
       <div class="Logo">
         <a href="../../../../index.php">
-            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+          <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
         </a>
       </div>
     </div>

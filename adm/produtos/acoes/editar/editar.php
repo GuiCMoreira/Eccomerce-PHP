@@ -28,21 +28,21 @@ $categoria = $responseCategoria->fetchAll();
     <link rel="stylesheet" href="../../../../stylesheet/adm.css">
 
     <title>Editar Produtos</title>
-<link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>
-<header>
-<br>
-    <div class="Header">
-      <div class="Logo">
-        <a href="../../../../index.php">
-            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
-        </a>
-      </div>
-    </div>
-    <br>
-  </header>
+    <header>
+        <br>
+        <div class="Header">
+            <div class="Logo">
+                <a href="../../../../index.php">
+                    <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+                </a>
+            </div>
+        </div>
+        <br>
+    </header>
     <a href="../../produto.php"><button>Voltar</button></a>
     <br>
     <form action="salvar.php" method="POST">

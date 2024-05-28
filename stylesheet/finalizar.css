@@ -14,43 +14,40 @@ section {
 .container {
   height: max-content;
   border-radius: 6px;
-  border: 1px #E6E6E6 solid;
+  border: 1px #e6e6e6 solid;
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
 }
 
 .input-section {
-   padding: 0 40px;
+  padding: 0 40px;
   flex-grow: 0.7;
   gap: 20px;
-  
+
   h2 {
     margin-top: 45px;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 45px;
-    color: #102F00;
+    color: #102f00;
   }
-  
+
   label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 300px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 300px;
   }
-  input{
-      width: 100%;
-      text-align: center;
-      padding: 10px 0 10px 0px;
-      font-size: 16px;
-      margin-bottom: 12px;
-      background: white;
-      border-radius: 6px;
-      border: 1px #E6E6E6 solid;
-      
-    }
-
-
+  input {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 10px 0px;
+    font-size: 16px;
+    margin-bottom: 12px;
+    background: white;
+    border-radius: 6px;
+    border: 1px #e6e6e6 solid;
+  }
 }
 
 .container-pedido {
@@ -59,20 +56,17 @@ section {
   height: max-content;
   background: white;
   border-radius: 8px;
-  border: 1px #E6E6E6 solid;
+  border: 1px #e6e6e6 solid;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 24px;
 }
 
-
-
 .titulo-pedido {
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-size: 20px;
   font-weight: 500;
-
 }
 
 .Product {
@@ -95,7 +89,7 @@ section {
 }
 
 .Price {
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-size: 14px;
   font-family: Poppins;
   font-weight: 500;
@@ -106,7 +100,6 @@ section {
 .metodo-pagamento {
   position: relative;
 }
-
 
 .metodos {
   width: 144px;
@@ -121,7 +114,7 @@ section {
   gap: 10px;
 }
 
-button{
+button {
   gap: 16px;
   border-radius: 43px;
   border: none;
@@ -134,8 +127,7 @@ button{
   cursor: pointer;
 }
 
-select{
+select {
   border-radius: 43px;
   border: none;
-
 }

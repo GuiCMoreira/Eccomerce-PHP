@@ -14,12 +14,12 @@ $endereco_cli = filter_input(INPUT_POST, 'endereco_cli', FILTER_SANITIZE_SPECIAL
 $cpf_cnpj_trans = filter_input(INPUT_POST, 'cpf_cnpj_trans', FILTER_SANITIZE_SPECIAL_CHARS);
 $cpf_cnpj_vend = filter_input(INPUT_POST, 'cpf_cnpj_vend', FILTER_SANITIZE_SPECIAL_CHARS);
 if (isset($_SESSION['carrinho_serializado'])) {
-      $carrinho = unserialize($_SESSION['carrinho_serializado']);
-      $total = 0;
-  foreach ($carrinho as $item) {
-            $resultado = $item[0] * $item[2];
-            $total = $total + $resultado;
-  }
+    $carrinho = unserialize($_SESSION['carrinho_serializado']);
+    $total = 0;
+    foreach ($carrinho as $item) {
+        $resultado = $item[0] * $item[2];
+        $total = $total + $resultado;
+    }
 }
 $valor_comissao = $total * 0.1;
 $valor_transporte = $total * 0.05;
@@ -31,18 +31,12 @@ $sql = "INSERT INTO cliente (cpf_cnpj_cli, nome_cli, numero_cli, bairro_cli, cid
 
 $sql2 = "INSERT INTO compra (data_compra, valor_comissao, valor_transporte, cpf_cnpj_vend, cpf_cnpj_trans, cpf_cnpj_cli) VALUES ('$data_compra', '$valor_comissao', '$valor_transporte', '$cpf_cnpj_vend', '$cpf_cnpj_trans', '$cpf_cnpj_cli')";
 
-foreach ($carrinho as $item) {
-    $sql3 = "INSERT INTO itemcompra (codigo_prod, valor, quantidade) VALUES ('$item[4]', '$item[2]', '$item[0]')";
-
-    $k= $bd->exec($sql3);
-}
-
 try {
     $bd->beginTransaction();
     $i = $bd->exec($sql);
     $j = $bd->exec($sql2);
 
-    if ($i != 1 || $j != 1 || $k != 1) {
+    if ($i != 1 || $j != 1) {
         $bd->rollBack();
         echo "Erro ao inserir dados.";
     } else {

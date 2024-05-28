@@ -6,9 +6,9 @@ $select = "SELECT * FROM categoria where id = '$id'";
 $response = $bd->query($select);
 
 if ($response->rowCount() == 0) {
-    $bd = null;
-    header("location:index.php");
-    die();
+  $bd = null;
+  header("location:index.php");
+  die();
 }
 $categoria = $response->fetch();
 ?>
@@ -17,41 +17,41 @@ $categoria = $response->fetch();
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../stylesheet/adm.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../../stylesheet/adm.css">
 
-    <title>Editar Categorias</title>
-<link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
+  <title>Editar Categorias</title>
+  <link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>
-<header>
-<br>
+  <header>
+    <br>
     <div class="Header">
       <div class="Logo">
         <a href="../../../../index.php">
-            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+          <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
         </a>
       </div>
     </div>
     <br>
   </header>
 
-    <a href="../../categoria.php"><button>Voltar</button></a>
+  <a href="../../categoria.php"><button>Voltar</button></a>
+  <br>
+  <form action="salvar.php" method="POST">
+    <div>
+      <label>ID: </label>
+      <input type="text" name="id" readonly value="<?= $categoria['id']; ?>">
+      <br>
+      <label>Categoria: </label>
+      <input type="text" name="nome" value="<?= $categoria['nome'] ?>">
+      <br>
+    </div>
     <br>
-    <form action="salvar.php" method="POST">
-        <div>
-            <label>ID: </label>
-            <input type="text" name="id" readonly value="<?= $categoria['id']; ?>">
-            <br>
-            <label>Categoria: </label>
-            <input type="text" name="nome" value="<?= $categoria['nome'] ?>">
-            <br>
-        </div>
-        <br>
-        <input type="submit" value="Salvar">
-    </form>
+    <input type="submit" value="Salvar">
+  </form>
 </body>
 
 </html>

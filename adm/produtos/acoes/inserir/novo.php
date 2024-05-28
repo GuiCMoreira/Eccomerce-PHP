@@ -28,16 +28,16 @@ $erro = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../../../stylesheet/adm.css">
   <title>Novo Produto</title>
-<link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="../../../../stylesheet/assets/logo_planta.svg" type="image/x-icon">
 </head>
 
 <body>
-<header>
-<br>
+  <header>
+    <br>
     <div class="Header">
       <div class="Logo">
         <a href="../../../../index.php">
-            <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
+          <img src="../../../../stylesheet/assets/logo.svg" alt="Ecobazar Logo">
         </a>
       </div>
     </div>

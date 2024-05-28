@@ -25,6 +25,7 @@ $categoria = $stmtCategoria->fetch();
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +35,7 @@ $categoria = $stmtCategoria->fetch();
   <link rel="stylesheet" href="../stylesheet/style.css">
 
 </head>
+
 <body>
   <header>
     <div class="Header">
@@ -78,7 +80,7 @@ $categoria = $stmtCategoria->fetch();
               </div>
             </div>
           </div>
-            <img class="divisor" src="../stylesheet/assets/linha.svg" />
+          <img class="divisor" src="../stylesheet/assets/linha.svg" />
         </div>
 
         <div class="frame-4">
@@ -91,65 +93,66 @@ $categoria = $stmtCategoria->fetch();
           </div>
         </div>
 
-  <form action="adicionarCarrinho.php" method="GET">
+        <form action="adicionarCarrinho.php" method="GET">
 
-        <div class="adicionar_carrinho">
-          <div class="quantidade">
-            <div class="adicionar_produto">
-            <img src="../stylesheet/assets/diminuir.svg" alt="" id="diminuirBtn">
-            
+          <div class="adicionar_carrinho">
+            <div class="quantidade">
+              <div class="adicionar_produto">
+                <img src="../stylesheet/assets/diminuir.svg" alt="" id="diminuirBtn">
+
+              </div>
+              <input type="number" readonly name="quantidadeSelecionada" value="1" id="quantidadeSelecionada"
+                class="quantidadeSelecionada">
+              <div class="adicionar_produto">
+                <img src="../stylesheet/assets/aumentar.svg" alt="" id="aumentarBtn">
+
+              </div>
             </div>
-            <input type="number" readonly name="quantidadeSelecionada" value="1" id="quantidadeSelecionada" class="quantidadeSelecionada">
-            <div class="adicionar_produto">
-            <img src="../stylesheet/assets/aumentar.svg" alt="" id="aumentarBtn">
-            
-            </div>
-          </div>
 
-          <script>
-            const diminuirBtn = document.getElementById('diminuirBtn');
-            const aumentarBtn = document.getElementById('aumentarBtn');
-            const quantidadeSelecionada = document.getElementById('quantidadeSelecionada');
+            <script>
+              const diminuirBtn = document.getElementById('diminuirBtn');
+              const aumentarBtn = document.getElementById('aumentarBtn');
+              const quantidadeSelecionada = document.getElementById('quantidadeSelecionada');
 
-            diminuirBtn.addEventListener('click', function() {
+              diminuirBtn.addEventListener('click', function () {
                 let quantidadeAtual = parseInt(quantidadeSelecionada.value);
                 if (quantidadeAtual > 1) {
-                    quantidadeAtual--;
-                    quantidadeSelecionada.value = quantidadeAtual;
+                  quantidadeAtual--;
+                  quantidadeSelecionada.value = quantidadeAtual;
                 }
 
-            });
+              });
 
-            aumentarBtn.addEventListener('click', function() {
+              aumentarBtn.addEventListener('click', function () {
                 let quantidadeAtual = parseInt(quantidadeSelecionada.value);
                 if (quantidadeAtual < <?= $produto['quantidade'] ?>) {
                   quantidadeAtual++;
                   quantidadeSelecionada.value = quantidadeAtual;
                 }
-            });
+              });
 
-          </script>
+            </script>
 
-          <input type="hidden" name="codigo_prod" value="<?= $id ?>">
-          <input type="hidden" name="nome_arquivo" value="<?= $imagem['nome_arquivo'] ?>">
-          <input type="hidden" name="nome_pro" value="<?= $produto['nome_pro'] ?>">
-          <input type="hidden" name="valor_unitario" value="<?= $produto['valor_unitario'] ?>">
-          <input name="adicionarCarrinho" type="submit" value="Adicionar ao Carrinho" class="carrinho-add">
-  </form>
+            <input type="hidden" name="codigo_prod" value="<?= $id ?>">
+            <input type="hidden" name="nome_arquivo" value="<?= $imagem['nome_arquivo'] ?>">
+            <input type="hidden" name="nome_pro" value="<?= $produto['nome_pro'] ?>">
+            <input type="hidden" name="valor_unitario" value="<?= $produto['valor_unitario'] ?>">
+            <input name="adicionarCarrinho" type="submit" value="Adicionar ao Carrinho" class="carrinho-add">
+        </form>
 
-        </div>
+      </div>
 
-        <div class="frame-4">
-          <div class="div-3">
-            <div class="vendedor">Categoria: </div>
-            <div class="grupo">
-              <div class="nome_vendedor"><?= $categoria['nome'] ?></div>
-              <br>
-            </div>
+      <div class="frame-4">
+        <div class="div-3">
+          <div class="vendedor">Categoria: </div>
+          <div class="grupo">
+            <div class="nome_vendedor"><?= $categoria['nome'] ?></div>
+            <br>
           </div>
         </div>
-        
       </div>
+
+    </div>
     </div>
 
     <section class="Products">
@@ -163,7 +166,7 @@ $categoria = $stmtCategoria->fetch();
           echo "<img src='" . $produtos["nome_arquivo"] . "' alt=''>";
           echo "<p id='nome_pro'>";
           echo $produtos["nome_pro"];
-          echo "</p>";  
+          echo "</p>";
           echo "<p id='valor'>";
           echo "R$" . $produtos["valor_unitario"];
           echo "</p>";
@@ -201,4 +204,5 @@ $categoria = $stmtCategoria->fetch();
   </footer>
 
 </body>
+
 </html>
