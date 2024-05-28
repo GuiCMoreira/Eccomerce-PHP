@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/05/2024 às 20:11
+-- Tempo de geração: 28/05/2024 às 15:51
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -62,6 +62,13 @@ CREATE TABLE `cliente` (
   `endereco_cli` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Despejando dados para a tabela `cliente`
+--
+
+INSERT INTO `cliente` (`cpf_cnpj_cli`, `nome_cli`, `numero_cli`, `bairro_cli`, `cidade_cli`, `cep_cli`, `estado_cli`, `endereco_cli`) VALUES
+('123', 'Guilherme C Moreira', '23', 'ag', 'Bragança Paulista', '12929128', 'SP', 'João Rubens Valle, 910');
+
 -- --------------------------------------------------------
 
 --
@@ -70,7 +77,7 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `compra` (
   `numero_compra` int(11) NOT NULL,
-  `data` date DEFAULT NULL,
+  `data_compra` date DEFAULT NULL,
   `valor_comissao` decimal(10,2) DEFAULT NULL,
   `valor_transporte` decimal(10,2) DEFAULT NULL,
   `cpf_cnpj_vend` varchar(18) DEFAULT NULL,
@@ -117,6 +124,23 @@ CREATE TABLE `itemcompra` (
   `quantidade` decimal(5,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Despejando dados para a tabela `itemcompra`
+--
+
+INSERT INTO `itemcompra` (`numero_compra`, `codigo_prod`, `valor`, `quantidade`) VALUES
+(NULL, '5', NULL, 1.00),
+(NULL, '8', NULL, 1.00),
+(NULL, '5', NULL, 1.00),
+(NULL, '4', NULL, 1.00),
+(NULL, '4', NULL, 1.00),
+(NULL, '5', NULL, 0.00),
+(NULL, '3', NULL, 4.00),
+(NULL, '4', NULL, 1.00),
+(NULL, '4', NULL, 0.00),
+(NULL, '8', NULL, 1.00),
+(NULL, '8', NULL, 1.00);
+
 -- --------------------------------------------------------
 
 --
@@ -143,8 +167,8 @@ INSERT INTO `produto` (`codigo_prod`, `nome_pro`, `descricao`, `valor_unitario`,
 ('1', 'Maçã', 'Verdinha', 90.00, 90, '90', '90', '90', 3),
 ('2', 'Manga', 'Laranjinha', 90.00, 90, '90', '90', '90', 3),
 ('3', 'Tomate', 'Vermelhinho', 90.00, 90, '90', '90', '90', 3),
-('4', 'Couve-Flor', 'Florescente', 90.00, 90, '90', '90', '90', 1),
-('5', 'Alface', 'Verdinho', 90.00, 90, '90', '90', '90', 1),
+('4', 'Couve-Flor', 'Florescente', 90.00, 9, '90', '90', '90', 1),
+('5', 'Alface', 'Verdinho', 90.00, 7, '90', '90', '90', 1),
 ('6', 'Pimentão', 'Ardidinho', 90.00, 90, '90', '90', '90', 2),
 ('7', 'Pimenta', 'Ardidássa', 90.00, 90, '90', '90', '90', 2),
 ('8', 'Beringela', 'Gigante', 90.00, 90, '90', '90', '90', 2);
@@ -260,6 +284,12 @@ ALTER TABLE `vendedor`
 --
 ALTER TABLE `categoria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `compra`
+--
+ALTER TABLE `compra`
+  MODIFY `numero_compra` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para tabelas despejadas
