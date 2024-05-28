@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+
+include_once '../script/banco.php';
+include_once '../script/geral.php';
+$bd = conectar();
+$select = "SELECT * FROM vendedor";
+$response = $bd->query($select);
+
+$vendedor = $response->fetchAll();
+
+$select = "SELECT * FROM transportadora";
+$response = $bd->query($select);
+
+$transportadora = $response->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +52,7 @@
     <section class="input-section">
 
       <div class="container">
-        <h2>Informações</h2>
+        <h2>Dados do Cliente</h2>
         <form action="../script/finalizarCompra.php" method="POST">
 
           <label for="cpf_cnpj_cli">CPF:</label>
@@ -62,12 +80,6 @@
 
           <label for="endereco_cli">Endereço:</label>
           <input type="endereco_cli" id="endereco_cli" name="endereco_cli" class="input-field">
-
-          <label for="cpf_cnpj_trans">cpf_cnpj_trans</label>
-          <input type="text" name="cpf_cnpj_trans" id="cpf_cnpj_trans">
-
-          <label for="cpf_cnpj_vend">cpf_cnpj_vend</label>
-          <input type="text" name="cpf_cnpj_vend" id="cpf_cnpj_vend">
     </section>
     </div>
 
@@ -75,17 +87,45 @@
     <section class="resumo-pedido">
       <div class="container-pedido">
         <h2 class="titulo-pedido">Resumo do Pedido</h2>
-        <div class="Info">
-          <img class="Image" src="https://via.placeholder.com/60x60" alt="Product Image">
-          <div class="ProductName">Green Capsicum</div>
-          <div class="Quantity">x5</div>
-          <div class="Price">$70.00</div>
+        <?php
+        if (isset($_SESSION['carrinho_serializado'])) {
+          $carrinho = unserialize($_SESSION['carrinho_serializado']);
+          $total = 0;
+          foreach ($carrinho as $item) {
+            echo "<div class='Info'>";
+            echo "<img class='Image' src='$item[3]' alt='Product Image'>";
+            echo "<div class='ProductName'>" . $item[1] . "</div>";
+            echo "<div class='Quantity'>x" . $item[0] . "</div>";
+            echo "<div class='Price'>R$" . $item[2] . "</div>";
+            echo "</div>";
+            $total = $total + $item[0] * $item[2];
+          }
+        }
+        ?>
+
+        <div class="metodo-pagamento">
+          <div>
+          </div>
+          <h2 class="titulo-pedido">Selecionar Vendedor</h2>
+          <div class="metodos">
+            <select name="cpf_cnpj_vend">
+              <?php
+              ListaSelecao($vendedor, ["cpf_cnpj_vend", "nome_vend"]);
+              ?>
+            </select>
+          </div>
         </div>
 
         <div class="metodo-pagamento">
-          <h2 class="titulo-pedido">Selecionar Método de Pagamento</h2>
+          <div>
+          </div>
+          <h2 class="titulo-pedido">Selecionar Transportadora</h2>
           <div class="metodos">
-            <select name="" id=""></select>
+            <select name="cpf_cnpj_trans">
+              <?php
+              ListaSelecao($transportadora, ["cpf_cnpj_trans", "nome_trans"]);
+              ?>
+            </select>
           </div>
         </div>
 
