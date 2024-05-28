@@ -91,7 +91,7 @@ session_start();
             </div>
             <div class="carrinho-total">
               <div class="total-label">Total:</div>
-              <div class="total-amount">R$<?= $total ?></div>
+              <div class="total-amount">R$<?= isset($total) ? $total : '0.00' ?></div>
             </div>
           </div>
           <input name="finalizarCompra" type="submit" value="Finalizar Compra" class="finalizarCompra">

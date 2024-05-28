@@ -83,6 +83,9 @@ if (!$i || !$j) {
 
     // Confirma a transação
     $bd->commit();
+
+    unset($_SESSION['carrinho_serializado']);
+
     header("Location: ../pages/finalizarCompra.php?cpf_cnpj_cli=$cpf_cnpj_cli&cpf_cnpj_trans=$cpf_cnpj_trans&cpf_cnpj_vend=$cpf_cnpj_vend");
     exit;
 }
