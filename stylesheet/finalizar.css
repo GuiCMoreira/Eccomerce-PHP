@@ -1,0 +1,141 @@
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container {
+  height: max-content;
+  border-radius: 6px;
+  border: 1px #E6E6E6 solid;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.input-section {
+   padding: 0 40px;
+  flex-grow: 0.7;
+  gap: 20px;
+  
+  h2 {
+    margin-top: 45px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    color: #102F00;
+  }
+  
+  label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 300px;
+  }
+  input{
+      width: 100%;
+      text-align: center;
+      padding: 10px 0 10px 0px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      background: white;
+      border-radius: 6px;
+      border: 1px #E6E6E6 solid;
+      
+    }
+
+
+}
+
+.container-pedido {
+  width: 424px;
+  padding: 24px;
+  height: max-content;
+  background: white;
+  border-radius: 8px;
+  border: 1px #E6E6E6 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+
+
+.titulo-pedido {
+  color: #1A1A1A;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.Product {
+  width: 376px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+}
+
+.Image {
+  width: 60px;
+  height: 60px;
+}
+
+.Price {
+  color: #1A1A1A;
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 21px;
+  word-wrap: break-word;
+}
+
+.metodo-pagamento {
+  position: relative;
+}
+
+
+.metodos {
+  width: 144px;
+  height: 83px;
+  position: absolute;
+  left: 0px;
+  top: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+button{
+  gap: 16px;
+  border-radius: 43px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+
+  padding: 12px 24px;
+  background: #00b307;
+  color: white;
+  cursor: pointer;
+}
+
+select{
+  border-radius: 43px;
+  border: none;
+
+}
