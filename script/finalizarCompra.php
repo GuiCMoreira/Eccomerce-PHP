@@ -81,6 +81,20 @@ if (!$i || !$j) {
         }
     }
 
+    // Atualizando a quantidade de produtos
+    foreach ($carrinho as $item) {
+        $sql_update = "UPDATE produto SET quantidade = quantidade - :quantidade WHERE codigo_prod = :codigo_prod";
+        $stmt_update = $bd->prepare($sql_update);
+        $stmt_update->bindParam(':quantidade', $item[0]);
+        $stmt_update->bindParam(':codigo_prod', $item[4]);
+        $l = $stmt_update->execute();
+        if (!$l) {
+            $bd->rollBack();
+            echo "Erro ao atualizar a quantidade de produtos no banco de dados.";
+            exit;
+        }
+    }
+
     // Confirma a transação
     $bd->commit();
 
