@@ -86,7 +86,7 @@ if (!$i || !$j) {
 
     unset($_SESSION['carrinho_serializado']);
 
-    header("Location: gerarPdf.php?data_compra=$data_compra&cpf_cnpj_cli=$cpf_cnpj_cli&nome_cli=$nome_cli&numero_cli=$numero_cli&bairro_cli=$bairro_cli&cidade_cli=$cidade_cli&cep_cli=$cep_cli&estado_cli=$estado_cli&endereco_cli=$endereco_cli&cpf");
+    header("Location: gerarPdf.php?data_compra=$data_compra&cpf_cnpj_cli=$cpf_cnpj_cli&nome_cli=$nome_cli&numero_cli=$numero_cli&bairro_cli=$bairro_cli&cidade_cli=$cidade_cli&cep_cli=$cep_cli&estado_cli=$estado_cli&endereco_cli=$endereco_cli&cpf_cnpj_trans=$cpf_cnpj_trans&cpf_cnpj_vend=$cpf_cnpj_vend&numero_compra=$numero_compra");
     exit;
 }
 
