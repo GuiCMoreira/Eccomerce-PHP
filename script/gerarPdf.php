@@ -46,6 +46,7 @@ foreach ($carrinho as $item) {
   $totaldetudo += $item[0] * $item[2];
   $html .= '</tr>';
 }
+$html .= '<br>';
 $html .= '<tr>' . '<td>' . 'Total' . '</td>' . '<td>' . '</td>' . '<td>' . '</td>' . '<td>' . $totaldetudo . '</td>' . '</tr>';
 $html .= '</tbody>';
 $html .= '</table>';
