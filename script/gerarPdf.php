@@ -26,12 +26,9 @@ $html .= '<p>Bairro: ' . $dados['bairro_cli'] . '</p>';
 $html .= '<p>Cidade: ' . $dados['cidade_cli'] . '</p>';
 $html .= '<p>CEP: ' . $dados['cep_cli'] . '</p>';
 $html .= '<p>Estado: ' . $dados['estado_cli'] . '</p>';
-
-//tabela dos produtos do carrinho
 $html .= '<table>';
 $html .= '<thead>';
 $html .= '<tr>';
-$html .= '<th>Código</th>';
 $html .= '<th>Nome</th>';
 $html .= '<th>Quantidade</th>';
 $html .= '<th>Valor Unitário</th>';
@@ -39,15 +36,17 @@ $html .= '<th>Valor Total</th>';
 $html .= '</tr>';
 $html .= '</thead>';
 $html .= '<tbody>';
+$totaldetudo = 0;
 foreach ($carrinho as $item) {
   $html .= '<tr>';
-  $html .= '<td>' . $item[4] . '</td>';
   $html .= '<td>' . $item[1] . '</td>';
   $html .= '<td>' . $item[0] . '</td>';
   $html .= '<td>' . $item[2] . '</td>';
   $html .= '<td>' . $item[0] * $item[2] . '</td>';
+  $totaldetudo += $item[0] * $item[2];
   $html .= '</tr>';
 }
+$html .= '<tr>' . '<td>' . 'Total' . '</td>' . '<td>' . '</td>' . '<td>' . '</td>' . '<td>' . $totaldetudo . '</td>' . '</tr>';
 $html .= '</tbody>';
 $html .= '</table>';
 $html .= '</body>';
@@ -66,10 +65,7 @@ $dompdf->render();
 // Output the generated PDF to Browser
 $dompdf->stream();
 
-
-
 unset($_SESSION['carrinho_serializado']);
 
-header('../index.php');
 
 ?>
