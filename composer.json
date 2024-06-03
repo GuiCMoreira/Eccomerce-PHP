@@ -1,0 +1,18 @@
+{
+    "name": "gui03/eccomerce-php",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Gui03\\EccomercePhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Guilherme Carvalho",
+            "email": "gui0307carvalho@gmail.com"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.0"
+    }
+}
