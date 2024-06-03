@@ -29,5 +29,5 @@ array_push($carrinho, $item);
 
 $_SESSION['carrinho_serializado'] = serialize($carrinho);
 
-header("location:produtos.php?codigo_prod=$id");
+header("location: ../pages/produtos.php?codigo_prod=$id");
 ?>
