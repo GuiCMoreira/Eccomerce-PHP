@@ -2,7 +2,7 @@
 session_start();
 date_default_timezone_set('America/Sao_Paulo');
 
-$data_compra = date('Y-m-d');
+$data_compra = date('d-m-Y');
 $cpf_cnpj_cli = filter_input(INPUT_POST, 'cpf_cnpj_cli', FILTER_SANITIZE_SPECIAL_CHARS);
 $nome_cli = filter_input(INPUT_POST, 'nome_cli', FILTER_SANITIZE_SPECIAL_CHARS);
 $numero_cli = filter_input(INPUT_POST, 'numero_cli', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -83,8 +83,6 @@ if (!$i || !$j) {
 
     // Confirma a transação
     $bd->commit();
-
-    unset($_SESSION['carrinho_serializado']);
 
     header("Location: gerarPdf.php?data_compra=$data_compra&cpf_cnpj_cli=$cpf_cnpj_cli&nome_cli=$nome_cli&numero_cli=$numero_cli&bairro_cli=$bairro_cli&cidade_cli=$cidade_cli&cep_cli=$cep_cli&estado_cli=$estado_cli&endereco_cli=$endereco_cli&cpf_cnpj_trans=$cpf_cnpj_trans&cpf_cnpj_vend=$cpf_cnpj_vend&numero_compra=$numero_compra");
     exit;
