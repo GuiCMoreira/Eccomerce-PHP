@@ -33,10 +33,20 @@ $categoria = $stmtCategoria->fetch();
   <link rel="shortcut icon" href="../stylesheet/assets/logo_planta.svg" type="image/x-icon">
   <link rel="stylesheet" href="../stylesheet/produtos.css" />
   <link rel="stylesheet" href="../stylesheet/style.css">
-
 </head>
 
 <body>
+  <?php if (isset($_GET['adicionado']) && $_GET['adicionado'] == 1): ?>
+  <script>
+    alert('Produto adicionado ao carrinho!');
+  </script>
+  <?php endif; ?>
+  <?php if (isset($_GET['erro']) && $_GET['erro'] == 'quantidade_excedida'): ?>
+  <script>
+    alert('Quantidade solicitada excede a quantidade disponível.');
+  </script>
+  <?php endif; ?>
+
   <header>
     <div class="Header">
       <div class="Logo">
@@ -94,18 +104,15 @@ $categoria = $stmtCategoria->fetch();
         </div>
 
         <form action="../script/adicionarCarrinho.php" method="GET">
-
           <div class="adicionar_carrinho">
             <div class="quantidade">
               <div class="adicionar_produto">
                 <img src="../stylesheet/assets/diminuir.svg" alt="" id="diminuirBtn">
-
               </div>
               <input type="number" readonly name="quantidadeSelecionada" value="1" id="quantidadeSelecionada"
                 class="quantidadeSelecionada">
               <div class="adicionar_produto">
                 <img src="../stylesheet/assets/aumentar.svg" alt="" id="aumentarBtn">
-
               </div>
             </div>
 
@@ -120,7 +127,6 @@ $categoria = $stmtCategoria->fetch();
                   quantidadeAtual--;
                   quantidadeSelecionada.value = quantidadeAtual;
                 }
-
               });
 
               aumentarBtn.addEventListener('click', function () {
@@ -130,29 +136,28 @@ $categoria = $stmtCategoria->fetch();
                   quantidadeSelecionada.value = quantidadeAtual;
                 }
               });
-
             </script>
 
             <input type="hidden" name="codigo_prod" value="<?= $id ?>">
             <input type="hidden" name="nome_arquivo" value="<?= $imagem['nome_arquivo'] ?>">
             <input type="hidden" name="nome_pro" value="<?= $produto['nome_pro'] ?>">
             <input type="hidden" name="valor_unitario" value="<?= $produto['valor_unitario'] ?>">
-            <input name="adicionarCarrinho" type="submit" value="Adicionar ao Carrinho" class="carrinho-add">
+            <input name="adicionarCarrinho" type="submit" value="Adicionar ao Carrinho" class="carrinho-add"
+              id="carrinho-add">
+          </div>
         </form>
 
-      </div>
-
-      <div class="frame-4">
-        <div class="div-3">
-          <div class="vendedor">Categoria: </div>
-          <div class="grupo">
-            <div class="nome_vendedor"><?= $categoria['nome'] ?></div>
-            <br>
+        <div class="frame-4">
+          <div class="div-3">
+            <div class="vendedor">Categoria: </div>
+            <div class="grupo">
+              <div class="nome_vendedor"><?= $categoria['nome'] ?></div>
+              <br>
+            </div>
           </div>
         </div>
-      </div>
 
-    </div>
+      </div>
     </div>
 
     <section class="Products">
@@ -180,12 +185,10 @@ $categoria = $stmtCategoria->fetch();
         ?>
       </div>
     </section>
-
   </main>
 
   <footer>
-    <div class="Footer">
-    </div>
+    <div class="Footer"></div>
     <div class="Footer">
       <div class="Logo">
         <a href="../index.php">
