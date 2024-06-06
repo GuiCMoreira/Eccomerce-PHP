@@ -61,15 +61,13 @@ session_start();
             $resultado = $item[0] * $item[2];
             echo "<div class='item-subtotal'>R$$resultado</div>";
             echo "<div class='item-quantidade'>";
-            echo "<button>-</button>";
             echo "<span id='$item[4]'>$item[0]</span>";
-            echo "<button>+</button>";
             echo "</div>";
-            // Botão de exclusão
+            // Imagem de exclusão
             echo "<div class='item-excluir'>";
             echo "<form action='../script/removerProduto.php' method='GET'>";
             echo "<input type='hidden' name='produto_id' value='$item[4]'>";
-            echo "<button type='submit'><img type='submit' src='../stylesheet/assets/remover.svg' alt=''></button>";
+            echo "<input type='image' src='../stylesheet/assets/remover.svg' alt='Excluir'>";
             echo "</form>";
             echo "</div>";
             echo "</div>";
