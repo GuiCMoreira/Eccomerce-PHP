@@ -7,7 +7,10 @@ Desenvolvido por Guilherme de Carvalho e Maria Fernanda Rizzo<br>Estudantes de A
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
+- HTML
+- CSS
 - PHP
+- Javascript
 
 ## 💻 Projeto
 

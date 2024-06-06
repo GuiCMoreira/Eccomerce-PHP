@@ -29,16 +29,25 @@ $valor_transporte = $total * 0.05;
 include_once "banco.php";
 $bd = conectar();
 
-$sql_cliente = "INSERT INTO cliente (cpf_cnpj_cli, nome_cli, numero_cli, bairro_cli, cidade_cli, cep_cli, estado_cli, endereco_cli) VALUES (:cpf_cnpj_cli, :nome_cli, :numero_cli, :bairro_cli, :cidade_cli, :cep_cli, :estado_cli, :endereco_cli)";
-
-$sql_compra = "INSERT INTO compra (data_compra, valor_comissao, valor_transporte, cpf_cnpj_vend, cpf_cnpj_trans, cpf_cnpj_cli) VALUES (:data_compra, :valor_comissao, :valor_transporte, :cpf_cnpj_vend, :cpf_cnpj_trans, :cpf_cnpj_cli)";
-
-$sql_item = "INSERT INTO itemcompra (numero_compra, codigo_prod, valor, quantidade) VALUES (:numero_compra, :codigo_prod, :valor, :quantidade)";
+// Verificar se o cliente já existe
+$sql_check_cliente = "SELECT COUNT(*) FROM cliente WHERE cpf_cnpj_cli = :cpf_cnpj_cli";
+$stmt_check_cliente = $bd->prepare($sql_check_cliente);
+$stmt_check_cliente->bindParam(':cpf_cnpj_cli', $cpf_cnpj_cli);
+$stmt_check_cliente->execute();
+$cliente_existe = $stmt_check_cliente->fetchColumn();
 
 $bd->beginTransaction();
 
-// Inserção de cliente
-$stmt_cliente = $bd->prepare($sql_cliente);
+if ($cliente_existe) {
+    // Atualizar os dados do cliente existente
+    $sql_update_cliente = "UPDATE cliente SET nome_cli = :nome_cli, numero_cli = :numero_cli, bairro_cli = :bairro_cli, cidade_cli = :cidade_cli, cep_cli = :cep_cli, estado_cli = :estado_cli, endereco_cli = :endereco_cli WHERE cpf_cnpj_cli = :cpf_cnpj_cli";
+    $stmt_cliente = $bd->prepare($sql_update_cliente);
+} else {
+    // Inserir um novo cliente
+    $sql_cliente = "INSERT INTO cliente (cpf_cnpj_cli, nome_cli, numero_cli, bairro_cli, cidade_cli, cep_cli, estado_cli, endereco_cli) VALUES (:cpf_cnpj_cli, :nome_cli, :numero_cli, :bairro_cli, :cidade_cli, :cep_cli, :estado_cli, :endereco_cli)";
+    $stmt_cliente = $bd->prepare($sql_cliente);
+}
+
 $stmt_cliente->bindParam(':cpf_cnpj_cli', $cpf_cnpj_cli);
 $stmt_cliente->bindParam(':nome_cli', $nome_cli);
 $stmt_cliente->bindParam(':numero_cli', $numero_cli);
@@ -50,6 +59,7 @@ $stmt_cliente->bindParam(':endereco_cli', $endereco_cli);
 $i = $stmt_cliente->execute();
 
 // Inserção de compra
+$sql_compra = "INSERT INTO compra (data_compra, valor_comissao, valor_transporte, cpf_cnpj_vend, cpf_cnpj_trans, cpf_cnpj_cli) VALUES (:data_compra, :valor_comissao, :valor_transporte, :cpf_cnpj_vend, :cpf_cnpj_trans, :cpf_cnpj_cli)";
 $stmt_compra = $bd->prepare($sql_compra);
 $stmt_compra->bindParam(':data_compra', $data_compra);
 $stmt_compra->bindParam(':valor_comissao', $valor_comissao);
@@ -67,6 +77,7 @@ if (!$i || !$j) {
     echo "Erro ao inserir dados no banco de dados.";
 } else {
     // Inserindo itens da compra
+    $sql_item = "INSERT INTO itemcompra (numero_compra, codigo_prod, valor, quantidade) VALUES (:numero_compra, :codigo_prod, :valor, :quantidade)";
     foreach ($carrinho as $item) {
         $stmt_item = $bd->prepare($sql_item);
         $stmt_item->bindParam(':numero_compra', $numero_compra);
