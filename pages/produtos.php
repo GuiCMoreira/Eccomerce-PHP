@@ -37,14 +37,14 @@ $categoria = $stmtCategoria->fetch();
 
 <body>
   <?php if (isset($_GET['adicionado']) && $_GET['adicionado'] == 1): ?>
-  <script>
-    alert('Produto adicionado ao carrinho!');
-  </script>
+    <script>
+      alert('Produto adicionado ao carrinho!');
+    </script>
   <?php endif; ?>
   <?php if (isset($_GET['erro']) && $_GET['erro'] == 'quantidade_excedida'): ?>
-  <script>
-    alert('Quantidade solicitada excede a quantidade disponível.');
-  </script>
+    <script>
+      alert('A quantidade que temos disponível em estoque já está toda em seu carrinho.');
+    </script>
   <?php endif; ?>
 
   <header>

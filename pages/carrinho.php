@@ -43,7 +43,7 @@ session_start();
         <div class="carrinho-titulo">Preço</div>
         <div class="carrinho-titulo">Subtotal</div>
         <div class="carrinho-titulo">Quantidade</div>
-
+        <div class="carrinho-titulo">Ações</div>
       </div>
       <div class="carrinho-items">
         <?php
@@ -64,6 +64,13 @@ session_start();
             echo "<button>-</button>";
             echo "<span id='$item[4]'>$item[0]</span>";
             echo "<button>+</button>";
+            echo "</div>";
+            // Botão de exclusão
+            echo "<div class='item-excluir'>";
+            echo "<form action='../script/removerProduto.php' method='GET'>";
+            echo "<input type='hidden' name='produto_id' value='$item[4]'>";
+            echo "<button type='submit'><img type='submit' src='../stylesheet/assets/remover.svg' alt=''></button>";
+            echo "</form>";
             echo "</div>";
             echo "</div>";
             echo "</div>";
