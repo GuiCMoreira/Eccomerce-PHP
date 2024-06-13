@@ -52,7 +52,7 @@ $response = $bd->query($select);
 
                 echo " <a href='acoes/consultar/consultar.php?cpf_cnpj_vend=" . $vendedores['cpf_cnpj_vend'] . "'><button>Consultar</button></a>";
 
-                echo " <a href='acoes/excluir/excluir.php?cpf_cnpj_vend=" . $vendedores['cpf_cnpj_vend'] . "'><button>Excluir</button></a>";
+                echo " <a href='acoes/excluir/excluir.php?cpf_cnpj_vend=" . $vendedores['cpf_cnpj_vend'] . "'><button class='btnexcluir'>Excluir</button></a>";
 
                 echo "</td>";
                 echo "</tr>";

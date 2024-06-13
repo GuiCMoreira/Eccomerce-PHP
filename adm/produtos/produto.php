@@ -55,7 +55,7 @@ $response = $bd->query($select);
 
                 echo " <a href='acoes/imagens/imagens.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Imagens</button></a>";
 
-                echo " <a href='acoes/excluir/excluir.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button>Excluir</button></a>";
+                echo " <a href='acoes/excluir/excluir.php?codigo_prod=" . $produtos['codigo_prod'] . "'><button class='btnexcluir'>Excluir</button></a>";
 
 
                 echo "</td>";

@@ -83,3 +83,35 @@ input[type='submit'] {
   width: 250px; /* Adicionado para definir a largura do botão */
   height: 50px; /* Adicionado para definir a altura do botão */
 }
+
+.btnexcluir {
+  background-color: #b20000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 100px; /* Adicionado para tornar as bordas dos botões arredondadas */
+  width: 120px; /* Adicionado para definir a largura do botão */
+  height: 50px; /* Adicionado para definir a altura do botão */
+}
+
+.btn_voltar {
+  background-color: #00b207;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 100px; /* Adicionado para tornar as bordas dos botões arredondadas */
+  width: 150px; /* Adicionado para definir a largura do botão */
+  height: 50px; /* Adicionado para definir a altura do botão */
+}

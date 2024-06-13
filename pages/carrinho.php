@@ -90,10 +90,6 @@ session_start();
         <div class="carrinho-container-2">
           <div class="carrinho-titulo">Carrinho Total</div>
           <div class="carrinho-summary">
-            <div class="carrinho-subtotal">
-              <div class="subtotal-label">Subtotal:</div>
-              <div class="subtotal-amount"></div>
-            </div>
             <div class="carrinho-total">
               <div class="total-label">Total:</div>
               <div class="total-amount">R$<?= isset($total) ? $total : '0.00' ?></div>

@@ -53,7 +53,7 @@ $response = $bd->query($select);
 
                 echo " <a href='acoes/consultar/consultar.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans'] . "'><button>Consultar</button></a>";
 
-                echo " <a href='acoes/excluir/excluir.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans'] . "'><button>Excluir</button></a>";
+                echo " <a href='acoes/excluir/excluir.php?cpf_cnpj_trans=" . $transportadora['cpf_cnpj_trans'] . "'><button class='btnexcluir'>Excluir</button></a>";
 
                 echo "</td>";
                 echo "</tr>";

@@ -43,7 +43,7 @@ $categoria = $responseCategoria->fetchAll();
         </div>
         <br>
     </header>
-    <a href="../../produto.php"><button>Voltar</button></a>
+    <a href="../../produto.php"><button class="btn_voltar">Voltar</button></a>
     <br>
     <form action="salvar.php" method="POST">
         <div>

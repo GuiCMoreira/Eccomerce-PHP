@@ -38,7 +38,7 @@ $categoria = $response->fetch();
     <br>
   </header>
 
-  <a href="../../categoria.php"><button>Voltar</button></a>
+  <a href="../../categoria.php"><button class="btn_voltar">Voltar</button></a>
   <br>
   <form action="salvar.php" method="POST">
     <div>

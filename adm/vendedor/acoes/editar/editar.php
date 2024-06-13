@@ -37,7 +37,7 @@ $vendedores = $response->fetch();
     </div>
     <br>
   </header>
-  <a href="../../vendedor.php"><button>Voltar</button></a>
+  <a href="../../vendedor.php"><button class="btn_voltar">Voltar</button></a>
   <br>
   <form action="salvar.php" method="POST">
     <div>

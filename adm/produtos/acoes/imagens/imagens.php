@@ -45,7 +45,7 @@ $imagem = $stmt->fetch();
   if ($imagem) {
     do {
       echo "<img src='" . $imagem['nome_arquivo'] . "' alt=''>";
-      echo " <a href='acoes/excluir/excluir.php?codigo_img=" . $imagem['codigo_img'] . "'><button>Excluir</button></a>";
+      echo " <a href='acoes/excluir/excluir.php?codigo_img=" . $imagem['codigo_img'] . "'><button class='btnexcluir'>Excluir</button></a>";
     } while ($imagem = $stmt->fetch());
   } else {
     echo "Não há imagens do produto.";

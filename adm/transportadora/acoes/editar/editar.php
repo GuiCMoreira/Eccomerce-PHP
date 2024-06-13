@@ -37,7 +37,7 @@ $transportadora = $response->fetch();
     </div>
     <br>
   </header>
-  <a href="../../transportadora.php"><button>Voltar</button></a>
+  <a href="../../transportadora.php"><button class="btn_voltar">Voltar</button></a>
   <br>
   <form action="salvar.php" method="POST">
     <div>
